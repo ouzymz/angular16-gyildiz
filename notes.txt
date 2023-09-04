@@ -9,9 +9,11 @@ NG Terminal Commands:
 --ng version : Kullanilan angular versiyonu 
 --ng new : sade bir sablonda  yeni bir angular uygulamasi oluşturur.
 --ng generate : yapi taslarinin uretilmesini saglar.
+--ng generate/g component/c "name" : yeni komponenetolusturmak icin kullanilir.
 --ng serve : Angular uygulamasinin ayaga kalrilmasinin saglar.
 --ng serve -- port 1111 : uygulamayi default port 4200 degilde 1111 protundan calistirmak icin kullanilir.
 --ng build : angular uygulamasinin build edilmesini sagler.
+
 
 
 
@@ -62,4 +64,35 @@ NG Mimarisi >>>>
         Guards :: Route erisimlerinin izin kontrolleri guard yapilanmasi uzerinden gerceklestirilmektekdir. 
                   Sayfalar arasi gecis sureclerinde ilgili kullacinin erisimine izin verilip verilmedigi kontrol eden sistemlerdir. 
 
-        Pipelar :: verilerin goruntuenme sureclerinde islenmesine islecsellk saglayan yapilardrç
+        Pipelar :: verilerin goruntuenme sureclerinde islenmesine islecsellk saglayan yapilardir.
+
+ ================================================================================================================================
+
+  DERS 3: Component yapilanmasi ??
+
+   --Componentler sayfalari olusturmamizi saglayan yapilardir. App klasoru icinde tutulur. 
+   --Angular uygulamasinda olusan ilk component baslangic komponenti olarak degerlendirilir. 
+   --bootstrap: [AppComponent] //burada tanimlanan component uygulamanin ana component oldugunu belirtir.
+
+   Components :: * Sayfa altyapilaridir. Bunun disinda sayfa olarak kullanillan componentlerin alt componentleri olarak da kullanilabilmektedir. 
+                 * Sayfa zaten bir componenet bu sayfdanin alt componentleri yani alt elemanlari da olabilmektdir. 
+                 * Her component birbirinden bagimsiz calisabilmektedir. 
+                 * BOL PARCALA YONET. 
+
+
+        selector: 'app-root',//html'de cagirilirken kullanilacak tag title.. Uygulamanin herhangi bir yarinden nasil cagiralacagini bildiren kisimdir. 
+        // templateUrl: './app.component.html', //Componentin gorsel calismarilinin yaoildigi parcadir -- icerisinde html esliginde directive pipe gibi angular ozelliklerini calistirebilecek yaoidadir. 
+        template: '<p>Merhaba</p>, {{title}}',
+        //componentin asil parcasidir. API gibi dis servislere atilan istekler de bu claslar uzerinden yapilir. 
+        HomeComponent //olusturulan componentin kullanilabilmesi icin ana modulde, declaration kısmında belirtilmesi gerekir. 
+
+    
+    Metadata Decarator :: componentin nasıl ypılandirılacagi ve nasıl kullanilacagini tanimlayan birdecaratordir. Bu decoratorler selector, style ce templatedısında animations inputs ve output gibi fieldlarla de modifiye edilebilir. 
+
+
+    !!!OLUSTURULAN COMPONENTİN UYGULAMADA KULLANILABILMESI ICIN ANA MODULE DECLARE EDILMESI GEREKMEKTEDIR. YUKARIDA ILGILI NOTTAN TAKIP ET.!!!
+
+ ================================================================================================================================
+
+
+          
