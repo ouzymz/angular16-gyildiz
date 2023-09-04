@@ -33,4 +33,33 @@ NG Mimarisi >>>>
 
  ================================================================================================================================
  
-    
+ DERS 2: Angular Mimarisinin yapisi nasildir??
+
+ Modules : Uygulamanin cesitli parcalarini bir araya getirerek butun olarak kullanimini saglar.
+
+            -Dep. inj. ile birbileri arasindan bagimliliklari test edilebilir. 
+
+ Componentker : HTML ve TS dosyalarindan olusurlar. component uygulamanin butun islemsel yapilarini ifade ederler. 
+            -orn, product page'i bir sayfadir ve fıtrati componenttir.
+            - Data binding ozelligi sayesinde ts ve html uzerindeki veriler birbirinebaglanir.
+            - ihtiyac duyduklarini servis instancelari dep. Inj. ile dahil edilebilir. 
+
+
+        Data Binding :: Angularda Databinding two way data binding olarak calisir. Yani hem html'den hem de TS'ten birbirini degistirebilir.
+
+        Dependency Injection :: Angular mimarisi uygulamada mevcut  olan bagimliliklari yoneyebilmek icin dependency injection patern kullanmaktadir.
+
+        Directives :: HTML nesnelerinin davranislarini gorunumlarini yonetebilmemizi saglatan ozel etiketlerdir. 
+                      Uygulamayi dinamik ve etkilisimli hale getirirler.
+
+        Decorators :: TS ozelligidir. İslevsel olarak componentin nasil bir yapiya sahip oldugunu belirtir.
+
+        Services :: Angular'da genellikle dis servislerle (API endpoint) iletisim kurmak, karmasik is operastonalrini veya business logic'i yurutmek yahut componentler arasinda iletisim saglayabilmek icin kullanilan fiili yapilanmalardir.
+                     Tum operasyonal yani fili kodlama gerektiren islemler servislerda yapilmaktadir.
+
+        Template :: Componentlarin HMTL kısımlaridir. HTML kodlari barindirabilecegi gibi ozel Angular elemanlari da baridirabiliriler.
+
+        Guards :: Route erisimlerinin izin kontrolleri guard yapilanmasi uzerinden gerceklestirilmektekdir. 
+                  Sayfalar arasi gecis sureclerinde ilgili kullacinin erisimine izin verilip verilmedigi kontrol eden sistemlerdir. 
+
+        Pipelar :: verilerin goruntuenme sureclerinde islenmesine islecsellk saglayan yapilardrç
