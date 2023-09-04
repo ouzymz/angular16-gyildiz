@@ -1,0 +1,36 @@
+
+DERS 1: Angular nedir?? 
+
+
+Angular::> Web uygulama mimarisidir. SPA(Single page application) , yuksek performansli cunku tek sayfadan yuklenerek calisir.
+
+NG Terminal Commands: 
+
+--ng version : Kullanilan angular versiyonu 
+--ng new : sade bir sablonda  yeni bir angular uygulamasi oluşturur.
+--ng generate : yapi taslarinin uretilmesini saglar.
+--ng serve : Angular uygulamasinin ayaga kalrilmasinin saglar.
+--ng serve -- port 1111 : uygulamayi default port 4200 degilde 1111 protundan calistirmak icin kullanilir.
+--ng build : angular uygulamasinin build edilmesini sagler.
+
+
+
+NG Mimarisi >>>>
+
+    --node_modules :: node pakatlerini tutan klasor
+    --src :: uygulamanin en oonemli klasoru 
+            -/app
+                *app-routing.module.ts :: sayfalar arasindaki baglanti routlarini tutan dosya.
+                *app.component.html :: uygulamanin ana componentidir. 
+                *app.component.ts :: codeladigimiz dosya C#'taki controller.
+                *app.module.ts :: Uygulamanin ana module'udur. 
+            -asset :: uygulama icinde resim icon vs bunun icinde bulunur.
+            -index.html :: kullanilan ana html single page.
+            -main.ts :: c#'taki program.cs
+    --package-lock.json :: uygulamada kullanilan paketlerin versionlarinin takip edildigi dosya.
+    --angular.json :: Uygulamayla ilgili script, stylei budgets gibi temel configleri iceren dosya. 
+    --editor.config :: Editor ayarlarini iceren dosyamiz
+
+ ================================================================================================================================
+ 
+    
