@@ -66,9 +66,7 @@ NG Mimarisi >>>>
 
         Pipelar :: verilerin goruntuenme sureclerinde islenmesine islecsellk saglayan yapilardir.
 
- ================================================================================================================================
-
-  DERS 3: Component yapilanmasi ??
+ 1
 
    --Componentler sayfalari olusturmamizi saglayan yapilardir. App klasoru icinde tutulur. 
    --Angular uygulamasinda olusan ilk component baslangic komponenti olarak degerlendirilir. 
@@ -79,20 +77,70 @@ NG Mimarisi >>>>
                  * Her component birbirinden bagimsiz calisabilmektedir. 
                  * BOL PARCALA YONET. 
 
-
+    :: {coded notes} ::
         selector: 'app-root',//html'de cagirilirken kullanilacak tag title.. Uygulamanin herhangi bir yarinden nasil cagiralacagini bildiren kisimdir. 
         // templateUrl: './app.component.html', //Componentin gorsel calismarilinin yaoildigi parcadir -- icerisinde html esliginde directive pipe gibi angular ozelliklerini calistirebilecek yaoidadir. 
         template: '<p>Merhaba</p>, {{title}}',
         //componentin asil parcasidir. API gibi dis servislere atilan istekler de bu claslar uzerinden yapilir. 
         HomeComponent //olusturulan componentin kullanilabilmesi icin ana modulde, declaration kısmında belirtilmesi gerekir. 
-
+    :: {coded notes} ::
     
     Metadata Decarator :: componentin nasıl ypılandirılacagi ve nasıl kullanilacagini tanimlayan birdecaratordir. Bu decoratorler selector, style ce templatedısında animations inputs ve output gibi fieldlarla de modifiye edilebilir. 
 
 
     !!!OLUSTURULAN COMPONENTİN UYGULAMADA KULLANILABILMESI ICIN ANA MODULE DECLARE EDILMESI GEREKMEKTEDIR. YUKARIDA ILGILI NOTTAN TAKIP ET.!!!
 
- ================================================================================================================================
+
+================================================================================================================================
+
+DERS 4: DATA BINDING 
+
+    Binding nedir: component bir modelin veya fonksiyonun tamplatedeki bir alan ya da DOM nesnesi ile canli olarak baglanti kuran nesne. 
+     
+     -- Text interpolation : HTML kisminda dield property degerinin yazdirilmasi islemeni {{name}}
+                             Name uzerindeki degisiklikler anlik olarak html'e aktarilacaktir.
+     
+     -- Property Binding : Template icindeki nesneleri veya directiveler icin Component Class'inda tanimli olan verilerin property olarak direkt baglanmasina saglayan yontemdir. [value] = "value"
+                            Bu yontem sayesinde deger atamalari dah adinamik bir sekilde gerceklestirilmis olmaktadir. 
+     
+     -- Event Binding : Template icerisindeki herhangi bir DOM nesnesinin Component Class`i icinde tanimli olan bir fonksitona even olarak baglanir
+                        Eventlere (ONCLICK CLICK VS) ts dosyasi uzerinden fonksiyon baglama islemidir.
+                        herhangi bir keyword.shift.a gibi islemleride eventlere ts methoduna baglayabilirsin
 
 
-          
+     -- Two way binding : Template icindeki field propertynin anlik olarak hem view hemde controller uzerinden degistrilebilmesi islemidir.
+                        [(ngModule)] kullanilabilmesi icin FormsModelu'n uygulamanin ana modulunde import edilmesi gerekmektedir.
+                        ngModelChange event'i ile bir olayi tetikleyebilir ve boylece girilen bilgilerin de dogrulamasi icin calisma gerceklestirebilirsiniz.
+     
+     -- Attribute binding : HTML nesnesinin degerine component classinden veri gonderilmesini saglayan sistemdir.
+     
+     -- Class Binding : 
+     
+     -- Style Binding : 
+
+    Chenge Detection algoritmasi == bu algoritma sayesinde veri degisikligi;nde component ve templet'n senkronize calismasina saglar.
+
+
+
+================================================================================================================================
+
+DERS 5: Interpolation Syntax Nedir??
+
+{{...}} ?? Angularda component classi icindeki gerganhi bir field yahut propertinin HTML uzerinde goruntulenebilmesini saglayan operatordur
+
+           Bu operatorumuz one-way data binding gerceklestirir.
+
+           Neler Kullanilamaz!! == uygulamada sadece temp;late uzerinde gerekli bilgileri okumak icin kullanilir. property ve fieldlarin degerlerini degistirecek operatorler kullannilamaz
+                                   new, typeodf, instanceof vs. keywordleri kullanilamaz!
+                                   ; operatoru kullanilamaz.
+                                   (++, --) operatorleri kullanilamaz.
+                                   bitwise operatorleri kullanilamaz. 
+        
+            Interpolation operatorunde html ve script degiskenleri berilmeye calisilirsa bunlar string olarak sayfaya yansitilir.
+
+            interpolation <p ngNonBindable > {{text}} dunya <\p> ngNonBindable operatoru kullnilarak interpolatin pasiflestirilerek string olarak gosterilir.
+
+
+            Neler Kullanilir <3 == pipes, Nullable Operatoru `{{person?.name}}`, Non-Null Assertion operatoru `{{person!.name}}`.
+
+
