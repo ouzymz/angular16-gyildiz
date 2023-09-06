@@ -6,12 +6,13 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { ComComponent } from './com/com.component';
 import { FormsModule } from '@angular/forms';
+import { ExampleDirective } from './directives/example.directive';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent, //olusturulan componentin kullanilabilmesi icin declaration kısmında belirtilmesi gerekir. 
-    ComComponent
+    ComComponent, ExampleDirective
   ],
   imports: [
     BrowserModule,

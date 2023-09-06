@@ -60,6 +60,10 @@ import { Component, Input } from '@angular/core';
        <div *ngSwitchCase="1">Dogru Sayi</div> <div *ngSwitchCase="2">yanlis Sayi</div> 
        <div *ngSwitchDefault>Hicbiri</div> 
       </div>
+
+      // directive kullanimi //
+  
+      <div appExample colorFromDirective="blue"> CLICK ON ELEMENT TO ACTIVE ANIMATION </div> 
   `,
 
   styleUrls: ['./app.component.scss'], //style klasorunu hedefleyen
@@ -85,4 +89,39 @@ export class AppComponent {
   onChange($event) {
     console.log(`on change event triggered!`);
   }
+
+
+  //#DIRECTIVE OLUSTURMA
+      //directive olusturma : --ng generate/g directive/d "directiveName" ; islem tamamlandiktan sonra ng CLI'yi yaptigi islemleri terminalde yazidirir.
+      //directive olusturulduktan sonra app.module.ts dosyasinda import edilmesi gerekir.
+      //directive olusturulduktan sonra app.module.ts dosyasinda declarations kismina eklenmesi gerekir.
+      //bir directive'in sinif adinin sonunda Directive kelimesi bulunmalidir.
+      //bir sinifin directive olabilmesi icin @Directive dekoratoru ile isaretlenmesi gerekir.
+      //bir directive'in selectoru ile html'de kullanilabilmesi icin selector kismina yazilmasi gerekir.
+
+
+  //#SELECTOR'I ATTRIBUTE OLARAK KULLANMA 
+      //selector ozelligi koseli parantez icinde yaziliyorsa bu attribute olarak kullanilacagi anlamina gelir ve html'de ornegin <p appExample></p> seklinde kullanilabilir.
+      
+  //#SELECTOR'CLASS OLARAK KULLANMA
+      //eger nokta '.' ile kullaniliyorsa ilgili directive'in class olarak kullanilacagi anlamina gelir ve html'de ornegin <p class="appExample"></p> seklinde kullanilabilir.
+ 
+  //DIRECTIVE ILE ISARETLENEN HTML NESNESINI KULLANMA
+      //directive ile isaretlenen html nesnesi directive'in constructor'ina parametre olarak gonderilir.
+
+
+  
+  //#DIRECTIVE'E PARAMETRE TANIMLAMA
+      //directive'e parametre tanimlamak icin @Input dekoratoru kullanilir.
+
+  //#HostListener
+      //Olusturulan directive'in hangi event ile gorevlendirilecegini saglayan dekoratordur.
+
+  //#HostBinding
+      //Directive'in isaretledigi DOM nesnesinin bir ozelligine bind olarak islemler gerceklestirebiliyoruz.
+
+
+ 
+
+
 }
