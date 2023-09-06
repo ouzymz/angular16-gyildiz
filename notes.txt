@@ -182,3 +182,6 @@ DERS 6: Custom Directive Nasil Olusturulur??
 directive olusturma : --ng generate/g directive/d "directiveName" ; islem tamamlandiktan sonra ng CLI'yi yaptigi islemleri terminalde yazidirir.
 
     //example directive ve app component dosyalari uzerine ilgili notlar alindi
+
+
+================================================================================================================================
