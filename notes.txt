@@ -9,7 +9,10 @@ NG Terminal Commands:
 --ng version : Kullanilan angular versiyonu 
 --ng new : sade bir sablonda  yeni bir angular uygulamasi oluşturur.
 --ng generate : yapi taslarinin uretilmesini saglar.
---ng generate/g component/c "name" : yeni komponenetolusturmak icin kullanilir.
+--ng generate/g component/c "componentName" : yeni komponenetolusturmak icin kullanilir.
+--ng generate/g directive/d "directiveName" : directive olusturma talimati
+--ng generate/g directive/d "directives/directiveName" : klasor altinda directive olusturma talimati
+
 --ng serve : Angular uygulamasinin ayaga kalrilmasinin saglar.
 --ng serve -- port 1111 : uygulamayi default port 4200 degilde 1111 protundan calistirmak icin kullanilir.
 --ng build : angular uygulamasinin build edilmesini sagler.
@@ -144,3 +147,38 @@ DERS 5: Interpolation Syntax Nedir??
             Neler Kullanilir <3 == pipes, Nullable Operatoru `{{person?.name}}`, Non-Null Assertion operatoru `{{person!.name}}`.
 
 
+================================================================================================================================
+
+DERS 6: Directives nedir? Ne amacla kullanilmaktadir?
+
+    HTML elemanlarin ekstra ozellikler ve davranislar eklemek icin kullanilan ozel etiketlerdir.
+
+    Directive Nasil Kullanilir?
+        HTML elemanina directive'in sellectorunu eklemek yeterlidir.
+        Bildirilen directive ne is yapiyorsa bunu otomatik olarak DOM elemenina verek bu ozellikleri elemente kazandirabiliriz.
+
+    Built-in Directives;
+        
+        *ngFor: HTML nesneleri uzerinde iterastonel islemler yapmak icin kullanilir. (*) structural directive
+                keywords; index (), first, last, even, odd.
+                
+        ngIf: Verilan kosula gore HTML nesnelerinin gorunurlugunu koontrol etmek icin kullanilan temel bir Angular directive'i dir
+
+
+        [ngSwitch]: verilen kosula gore HTML nesnelerinin gorunurlugunu yahut icerigini degistirmek icin kullanilan temel bir directive'dir. [] Custom bir  directivedir.
+
+
+        ngClass: vermek istedigim classi aktarabildigim direktilve
+        ngStyle: vermek istedigim stylei aktardigim directive
+
+
+        ngModel
+        ngNonBindable
+
+================================================================================================================================
+
+DERS 6: Custom Directive Nasil Olusturulur??
+
+directive olusturma : --ng generate/g directive/d "directiveName" ; islem tamamlandiktan sonra ng CLI'yi yaptigi islemleri terminalde yazidirir.
+
+    //example directive ve app component dosyalari uzerine ilgili notlar alindi
