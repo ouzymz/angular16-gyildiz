@@ -177,7 +177,7 @@ DERS 6: Directives nedir? Ne amacla kullanilmaktadir?
 
 ================================================================================================================================
 
-DERS 6: Custom Directive Nasil Olusturulur??
+DERS 7: Custom Directive Nasil Olusturulur??
 
 directive olusturma : --ng generate/g directive/d "directiveName" ; islem tamamlandiktan sonra ng CLI'yi yaptigi islemleri terminalde yazidirir.
 
@@ -185,3 +185,30 @@ directive olusturma : --ng generate/g directive/d "directiveName" ; islem tamaml
 
 
 ================================================================================================================================
+
+DERS 8: Structural Directive yapilanmasi nedir??
+
+    directivelr html elementi uzerinde manupilasyon islemleri yapmamizi saglayan yapilardir.
+    Structural Directivelr HTML nesnesini ve DOM yapilarini fiziksel olarak manipule ederek sayfa uzerinde degisiklikler ypamamizi saglayan directivlerdir.
+    "*" ile baslayan directivlerdir.
+    Normal directiveler HTML DOM yapilarini etkilemezler.
+      
+      -- TemplateRef : Directive'in calistigi HTML nesnesini temsil eder.
+      -- ViewContainerRef : Directive'in calistigi HTML nesnesinin containerini temsil eder.Bu kontiner icerisinden dinamik olarak HTML elemanlari eklemeye ya da cikarmaya izin verir. 
+
+    Custom Structural Directive Olusturma :
+
+        --
+
+
+================================================================================================================================
+
+DERS 9: PIPE NEDIR ? HAZIR PIPELAR NELERDIR?
+
+    Bir verinin goruntulenme seklini degistirmek icin kullanilan bir angular'a ozel yapidir.
+    Ornegin bir tarih verisinin belirli bir formatta gorunmesini gibi islemler yapilabilir. Bu tarz istiyaclara istinaden verinin orjilanlligi bozmadan gorsel bir kisimda makyaj/manipulasyon yapmamizi saglar.
+    
+    BUILT-IN PIPELAR
+        --CurrencyPipe : verilen degeri para birimi biciminde gosterir.
+        --
+        --

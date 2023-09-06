@@ -9,17 +9,18 @@ import { FormsModule } from '@angular/forms';
 import { ExampleDirective } from './directives/example.directive';
 import { CustomIfDirective } from './directives/custom-if.directive';
 import { CustomForDirective } from './directives/custom-for.directive';
+import { CustomPipePipe } from './pipes/custom-pipe.pipe';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent, //olusturulan componentin kullanilabilmesi icin declaration kısmında belirtilmesi gerekir. 
-    ComComponent, ExampleDirective, CustomIfDirective, CustomForDirective
+    ComComponent, ExampleDirective, CustomIfDirective, CustomForDirective, CustomPipePipe
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent] //burada tanimlanan component uygulamanin ana component oldugunu belirtir.

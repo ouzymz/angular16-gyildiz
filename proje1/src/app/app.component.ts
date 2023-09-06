@@ -73,7 +73,34 @@ import { Component, Input } from '@angular/core';
     <div *appCustomIf="true">STRUCTURAL DIRECTIVES customIF</div>
 
     <br />
-    <div *appCustomFor="3; let i = index;let iP= indexPlus ">STRUCTURAL DIRECTIVES customfor (3 adet olusturulmasi istendi) index : {{i}}, indexPlus: {{iP}} </div>
+    <div *appCustomFor="3; let i = index; let iP = indexPlus">
+      STRUCTURAL DIRECTIVES customfor (3 adet olusturulmasi istendi) index :
+      {{ i }}, indexPlus: {{ iP }}
+    </div>
+
+    <br /><br />
+
+    //PIPE KULLANIMLARI
+
+    <div>{{ pipeUpper | uppercase }}</div>
+
+    <div>{{ pipeSlice | slice : 1 : 3 }}</div>
+    <!-- 1. elemandan basla 3 tanesini al -->
+
+    <div>{{ pipeCurrency | currency : '$' : 'symbol' : '1.2-2' }}</div>
+
+    <div>{{ pipeDate | date }}</div>
+
+    <div>{{ pipeJSON | json }}</div>
+
+    <div>{{ pipeTitleCasePipe | titlecase }}</div>
+
+    <div *ngFor="let name of pipeKeyValue | keyvalue">{{name.key}} - {{name.value}} </div>
+
+    <br /><br />
+    //Custom Pipe kullanimi 
+
+    <div>{{"oguzhan yilmaz always works hard!"|customPipe:1:15}}</div>
   `,
 
   styleUrls: ['./app.component.scss'], //style klasorunu hedefleyen
@@ -123,4 +150,24 @@ export class AppComponent {
 
   //#HostBinding
   //Directive'in isaretledigi DOM nesnesinin bir ozelligine bind olarak islemler gerceklestirebiliyoruz.
+
+  //PIPES
+
+  pipeUpper: string = 'oguzhan';
+
+  pipeSlice: string[] = ['oguzhan', 'yilmaz', 'senol'];
+
+  pipeCurrency: number = 1000;
+
+  pipeJSON: object = { name: 'oguzhan', surname: 'yilmaz', age: 25 };
+
+  pipeDate: Date = new Date();
+
+  pipeTitleCasePipe: string = 'oguzhan yilmaz';
+
+  pipeKeyValue: Map<string, string> = new Map([
+    ['oguzhan', 'yilmaz'],
+    ['senol', 'gunes'],
+    ['fatih', 'terim'],
+  ]);
 }
