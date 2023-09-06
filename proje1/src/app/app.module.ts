@@ -7,12 +7,14 @@ import { HomeComponent } from './home/home.component';
 import { ComComponent } from './com/com.component';
 import { FormsModule } from '@angular/forms';
 import { ExampleDirective } from './directives/example.directive';
+import { CustomIfDirective } from './directives/custom-if.directive';
+import { CustomForDirective } from './directives/custom-for.directive';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent, //olusturulan componentin kullanilabilmesi icin declaration kısmında belirtilmesi gerekir. 
-    ComComponent, ExampleDirective
+    ComComponent, ExampleDirective, CustomIfDirective, CustomForDirective
   ],
   imports: [
     BrowserModule,
