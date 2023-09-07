@@ -259,6 +259,7 @@ DERS 11: COMPONENT LIFE CYCLE HOOK NEDIR? EVENTLERI NELERDIR?
             -docheck'ten farklidir. docheck componentin tamamini kontrol ederken contentcheck ngcontent kisminin guncellemelerini takip eder.
         
         --ngAfterViewInit : componentin viewi yuklendikten sonra tetiklenir.
+            -componentin tamamlanmasindan sonra tetiklenin tamamisyle yanina gectigini belirten etiket.
         
         --ngAfterViewChecked : componentin viewi yuklendikten sonra tetiklenir.
         
@@ -270,3 +271,43 @@ DERS 11: COMPONENT LIFE CYCLE HOOK NEDIR? EVENTLERI NELERDIR?
     1. amac componentin olusturuldu amac uzerine edindigi davranislardir.
     2. amac componentin durumlara gore anlik verebilecegi reflekslerdir. 
 
+
+================================================================================================================================
+
+
+DERS 12: ANGULAR FORMS Consepts & Approches
+
+    Kullaniciladan veri alabilmek yada kullanicilarla etkilesime girebilmek icin kullanilan yapilardir.
+        -Template-Driven Form yaklasimi : 
+            --Kolay yoludur.
+            --Form elemanlarinin her birinen 'ngModel' direktifi ile isaretleyerek calisma sergilemektedir.
+            --#fmr="ngForm" ile formu referans edebiliriz. - ngModel ile form elemanlarini referans edebiliriz.
+            --Formun tasarimini yapilandirmasini tamamen templete uzerinden gerceklestirir.
+
+        -Model-Driven/Reactive Forms yaklasimi:
+            -TD Formlara nazaran daha karmasik form islemleri icin uygun olan yaklasimdir.
+            -Bu yaklasimda formun temel mantigi component ucerinde bir nesne olarak tanimlanir vve bu nesne HTML'deki  ilgili form itiketlerine bind edilir.
+            -form elemanlari dinamik olarak ilgili nesne tarafindan takip edilir.
+        
+        -Konseptler: 
+            -FormGroup:
+                --Form elemanlarinin bir araya getirilmesi ile olusturulan bir nesnedir. Icinde form kontrol elemanlarini barindirir.
+            -FormArray:
+                --Form icerisinde dinamik olarak olusturulan kontrolleri temsil eden dizisel nesnelerdir.
+                  (yetenek ekle gibi 1'den fazla alinabilecek veriler icin kullanilir)
+
+            -FormControl:
+                --Form icinde bulunan kullanicidan veri almamizi saglayacak tek bir controlu temsil eder.
+
+            -FormBuilder:
+                --FormGroup' FormControl ve FormArray nesnelerini olusturmamizi kolaylastiracak olan bir servistir. icerisinde hazir fonksiyonlar sayesinde formu hizlica uretebilmemizi ve konfigure tememizi saglar.
+
+            
+        FirmGroup vs FormArray :: | FormGroup benzer olmayan verileri tuttugumuz form uniteleri, FormArray ise benzer verileri tuttugumuz form uniteleridir. 
+        
+        TD Forms vs MD Forms :: | 
+            --Veri Modeli: Veri modeli uzerinden MD Form , HTML sablonlari uzerinden TD Form yaklasimi .
+            --Dogrulama: md forms yaklasimi bir formdaki butun dogrulama kurallarina tabi tutarken, TD Forms yaklasimi ise ngModel direktifi ile isaretlenenlari kontrol eder.
+            --Kontrolun Bagimsizli: (bir kontrolun birden fazla form icinde kullanilabilmesi) kontrol bagimsizligi MD Forms yaklasiminda daha yuksektir. TD Forms yaklasiminda ise kontrol bagimsizligi daha dusuktur.
+            --Test Edilebilirlik: MD daha iyi.
+            --Karmasik yetkinligi: karmasik inputlama sureclerinde MD daha kuvvetli.
