@@ -1,0 +1,27 @@
+<form #frm="ngForm" (ngSubmit)="onSubmit(frm.value)">
+  <!-- frm.value is the object of the form which is consist of given name, sirname, email.. -->
+  <p>Name :</p>
+  <input type="text" name="name" ngModel /><br />
+
+  <p>Sirname :</p>
+  <input type="text" name="sirname" ngModel /><br />
+
+  <p>Email :</p>
+  <input type="email" name="email" ngModel /><br />
+
+  <p>Telephone :</p>
+  <input type="tel" name="telephone" ngModel /><br />
+
+  <p>Birthdate :</p>
+  <input type="datetime" name="birthdate" ngModel /><br />
+  <br />
+  <button type="submit">Submit</button>
+
+  <div ngModelGroup="address">
+    <p>Address :</p>
+    <input type="text" name="street" ngModel placeholder="sokak" /><br />
+    <input type="text" name="city" ngModel placeholder="sehir"/><br />
+    <input type="text" name="state" ngModel placeholder="bolge"/><br />
+    <input type="text" name="zip" ngModel placeholder="zip kodu"/><br />
+  </div>
+</form>

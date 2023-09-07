@@ -311,3 +311,9 @@ DERS 12: ANGULAR FORMS Consepts & Approches
             --Kontrolun Bagimsizli: (bir kontrolun birden fazla form icinde kullanilabilmesi) kontrol bagimsizligi MD Forms yaklasiminda daha yuksektir. TD Forms yaklasiminda ise kontrol bagimsizligi daha dusuktur.
             --Test Edilebilirlik: MD daha iyi.
             --Karmasik yetkinligi: karmasik inputlama sureclerinde MD daha kuvvetli.
+
+================================================================================================================================
+
+DERS 13 :  TEMPLATE-DRIVEN FORM 
+
+--ILGILI CALISMA TEMPLATE-DRIVEN FORM UZERINDE YAPILMISTIR. 
