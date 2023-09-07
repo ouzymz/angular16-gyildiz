@@ -210,5 +210,22 @@ DERS 9: PIPE NEDIR ? HAZIR PIPELAR NELERDIR?
     
     BUILT-IN PIPELAR
         --CurrencyPipe : verilen degeri para birimi biciminde gosterir.
-        --
-        --
+        --ger' kalan app.component.html dosyasi uzerinde ornekler bulunmaktadir.
+        
+    --ng g p pipeName : pipe olusturma komutu
+
+
+================================================================================================================================
+
+DERS 10: COMPONENT COMMUNICATION | PARENT TO CHILD / CHILD TO PARENT
+
+    Angular mimarisinda componentler arasi iletisim saglayabilmek icin Input ve Output decoratorleri kullanilir.
+    Child component herhangi bir componentin icinde selector keyi ile referans edilen componente denir.
+
+    ParentToChild : parent'tan child'a veri gonderirlerken kullanilan communicationdir. "Input" decoratoru ile saglanir.
+    ChildToParent : child'tan parent'a veri gonderirlerken kullanilan communicationdir. "Output" decoratoru ile saglanir.
+
+    component klasoru arasinda communication orneklerini bulabilirsin.
+
+    --parent'tan childa veri gonderilirken Attributes ve Methodlar gorev alir, child'tan parent'a veri gonderilirken ise Eventler gorev alir.    
+        
