@@ -229,3 +229,44 @@ DERS 10: COMPONENT COMMUNICATION | PARENT TO CHILD / CHILD TO PARENT
 
     --parent'tan childa veri gonderilirken Attributes ve Methodlar gorev alir, child'tan parent'a veri gonderilirken ise Eventler gorev alir.    
         
+
+================================================================================================================================
+
+DERS 11: COMPONENT LIFE CYCLE HOOK NEDIR? EVENTLERI NELERDIR?
+
+    Angular componentlerinin yasam dongusu icinde gerceklestirilen islemlerdir.
+
+    -Componentin cagrildigi andan imha edildigi ana kadar gecen surec icinde gerceklestirilen islemlerdir. 
+    Bunlar methodlardir ve bu methodlar Component'in veri guncellemesi, DOM ile etkilesime girmesi veya takip edilen berilerdeki degisimler gibi gorevleri terine getirmenize yardimci olabilirler. 
+
+    -Methodlar::>
+
+        (--Constructor :  ilk instance alindiginda tektilenir ve componentin olusturuldugu an tetiklenir.)
+
+        --ngOnChanges : componentin input propertylerinde degisiklik oldugunda tetiklenir.
+            -componentin input degiskenleri selektor referansi ucerinden degistigi durumlarda tetiklenir. 
+            -onchanges interface uzerinden butun componentle implemente edilebilir.
+
+        --ngOnInit : component olusturuldugunda tetiklenir.
+
+        --ngDoCheck : componentin herhangi bir degisiklik kontrolu yapildiginda tetiklenir.
+            -Angular componentinin guncellenmesi durumunda teklenen ve DoCheck interface'i ile cagirilan methoddur.
+
+        --ngAfterContentInit : componentin contenti yani icerigi yuklendikten sonra tetiklenir.
+            -<ng-content></ng-content> icindeki yani <app-component>...<app-component> arasindaki alanda degisiklik oldugunda tetiklenir
+    
+        --ngAfterContentChecked : componentin contentinde bir degisiklik oldugunda tetiklenir.
+            -docheck'ten farklidir. docheck componentin tamamini kontrol ederken contentcheck ngcontent kisminin guncellemelerini takip eder.
+        
+        --ngAfterViewInit : componentin viewi yuklendikten sonra tetiklenir.
+        
+        --ngAfterViewChecked : componentin viewi yuklendikten sonra tetiklenir.
+        
+        --ngOnDestroy : component yok edildiginde tetiklenir.
+
+    --ng g c lifeCycleHook : lifecycle hook ornegi icin component olusturuldu.
+
+    Yorum: 
+    1. amac componentin olusturuldu amac uzerine edindigi davranislardir.
+    2. amac componentin durumlara gore anlik verebilecegi reflekslerdir. 
+
