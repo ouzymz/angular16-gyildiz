@@ -317,3 +317,36 @@ DERS 12: ANGULAR FORMS Consepts & Approches
 DERS 13 :  TEMPLATE-DRIVEN FORM 
 
 --ILGILI CALISMA TEMPLATE-DRIVEN FORM UZERINDE YAPILMISTIR. 
+
+
+================================================================================================================================
+
+DERS 13 :  TEMPLATE-DRIVEN FORM 
+
+--ILGILI CALISMA MODEL-DRIVEN FORM UZERINDE YAPILMISTIR. 
+
+    --Component class'inda formun yapisinin nesnel olarak tanimlandigi form yapisidir. yani form yapisinda kullanilan formgroup ,formarray,ve formcontrol gibi butun nesneleri kendimizin olusturdugu formu konfigure ettigi bir form yapilanmasidir.
+
+    --Formun validastonel kurallariyla birlikte turlu yapilanmalarina da bu nesne uzerinde tanimlayabiliyoruz.
+
+    Kullanilan Temel Direktive'ler ::
+
+        --formGroup : formun icerisindeki form elemanlarini bir araya getirerek bir form yapisi olusturmak icin kullanilir.
+
+        --formControlName : form icerisindeki form elemanlarini bir araya getirerek bir form yapisi olusturmak icin kullanilir. 
+
+        --formArrayName : form icerisindeki form elemanlarini bir araya getirerek bir form yapisi olusturmak icin kullanilir.
+
+    Model-Driven Forms Yaklasimiyla Form Olusturma Detaylari:: 
+    
+        --Gerekli form directive'leri ReactiveFormModule uzerinden import edilmelidir.
+
+        --Ardinfan olusturulacak formun oncelikle modelini olustururuz ve gerekli formcontrol'leri tanimlariz. Bunun icin formbuilder nesnesini dependency injection yapariz..
+
+        --'form' etiketini formGroup directive'i ile olusturulan model'le, form kontrollerini ise modeldeki ilgili FormControl'lerine formControlName directive'i ile baglanir.
+
+        --Kullanici tarafindan doldurulan bu modelin gonderilebilmesi icin ngSubmit event'ine bir fonksiyon baglanir. Bu fonksiyon icerisinde formun gonderilmesi icin gerekli olan islemler gerceklestirilir.
+
+        Validation Tanimlama: 
+            --FormControl nesnesi uzerinden tanimlanir.
+            --Validators nesnesi uzerinden tanimlanir.

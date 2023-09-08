@@ -1,0 +1,26 @@
+<form [formGroup]="frm" (ngSubmit)="onSubmit()">
+  <input type="text" placeholder="name" formControlName="name" /> <br />
+  <input type="text" placeholder="surname" formControlName="surname" /> <br />
+  <input type="email" placeholder="email" formControlName="email" /> <br />
+  <input type="tel" placeholder="tel" formControlName="tel" /> <br />
+  <button>Submit</button>
+</form>
+<button (click)="isValidCheck()">IsValid</button>
+{{isValid}} <br />
+
+<br /><br />
+<hr />
+<br /><br />
+
+<form [formGroup]="frm2" (ngSubmit)="onSubmit2()">
+  <input type="text" placeholder="name" formControlName="name" /> <br />
+  <input type="text" placeholder="surname" formControlName="surname" /> <br />
+  <input type="email" placeholder="email" formControlName="email" /> <br />
+  <input type="tel" placeholder="tel" formControlName="tel" /> <br />
+  <div formGroupName="adress">
+    <input type="text" placeholder="city" formControlName="city" /> <br />
+    <input type="text" placeholder="street" formControlName="street" /> <br />
+    <input type="text" placeholder="zip" formControlName="zip" /> <br />
+  </div>
+  <button>Submit</button>
+</form>
