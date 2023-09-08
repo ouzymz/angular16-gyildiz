@@ -350,3 +350,14 @@ DERS 13 :  TEMPLATE-DRIVEN FORM
         Validation Tanimlama: 
             --FormControl nesnesi uzerinden tanimlanir.
             --Validators nesnesi uzerinden tanimlanir.
+
+onlyself: true, //sadece kendini kontrol et demek.
+
+================================================================================================================================
+
+DERS 15: CHANGING THE STATUS 
+
+    markAsTouch: form elemaninin ya da formun kendisinin degerinin degistirildigini 'touched' propertyleri degistirilir.
+
+    
+

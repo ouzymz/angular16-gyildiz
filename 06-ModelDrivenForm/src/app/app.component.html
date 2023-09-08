@@ -6,7 +6,7 @@
   <button>Submit</button>
 </form>
 <button (click)="isValidCheck()">IsValid</button>
-{{isValid}} <br />
+{{ isValid }} <br />
 
 <br /><br />
 <hr />
@@ -23,4 +23,39 @@
     <input type="text" placeholder="zip" formControlName="zip" /> <br />
   </div>
   <button>Submit</button>
+
+  <button (click)="markAsTouched()">markAsTouched</button><br />
+  <button (click)="markAllAsTouched()">markAllAsTouched</button><br />
+  <button (click)="markAsUnTouch()">markAsUnTouch</button><br />
+  <button (click)="markAsDirty()">markAsDirty</button><br /> 
+  <button (click)="markAsPristine()">markAsPristine</button><br />
+
+
+  <button (click)="disable()">disable</button><br />
+  <button (click)="enable()">enable</button><br />
+
+
 </form>
+
+
+Form touched : {{ frm2.touched }} <br />
+Name Control touched : {{ frm2.get("name").touched }} <br />
+
+<hr />
+<br />
+
+Form touched : {{ frm2.touched }} <br />
+Adress Control touched : {{ frm2.get("name").touched }} <br />
+  - Adress-City touched : {{ frm2.get("adress").get("city").touched }} <br />
+
+  <hr>
+
+Form dirty : {{ frm2.dirty }} <br />
+Adress Control dirty : {{ frm2.get("name").dirty }} <br />
+
+<hr>
+
+Form pristine : {{ frm2.pristine }} <br />
+Adress Control pristine : {{ frm2.get("name").pristine }} <br />
+
+
