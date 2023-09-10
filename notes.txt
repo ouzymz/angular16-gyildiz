@@ -458,6 +458,61 @@ DERS 17 : ANGULAR DEPENDENCY INJECTION
 
     -Dependency Injection Kullanimi:
 
-        -
+        - ilgili ts dosyalarina notlar alind 08-DependencyInjection klasoru altinda bulunmaktadir.
     
+
+================================================================================================================================
+
+
+DERS 18 : DEPENDENCY INJECTION V2
+
+    -Injector Mekanizmasinin Detaylari:
+
+        -Dependencyleri somutlastiran ve onlari ohtiyac noktalarina enjekte etmekle sorumlu olan yapilardir. 
+
+        - Mudel Injector Tree:
+            --modul seviyesinde provide edilecek servisler icin yapidir. 
+            --Modeul seviyesinde @ngModule ve @Injectable decoratorleri ile olusturulurlar.
+            --Null injector > platform module > root module > lazy module A/b
+
+            --RootModule icerisinde hem one hem de uygulamadaki tum modullerin provede'larini ve provide'in ozelligi olarak yapilandirilmis servisleri icerir. 
+
+        - Element Injector Tree:
+            --Componen ve dirctivlere servis eklenmesi
+
+    -Servislerin Provider'a eklenmesi
+
+        -Dependencynin kaydedildigi yer bagimliligin erisim kapsamini tanimlar. 
+        -Provider'larin 3 farkli yontemle eklenmesi mumkundur. 
+            --Component Level
+            --Module Level
+            --Root Level
+
+    @Injectable Decorator'i:
+
+        -Angular'da bir sinifin servis olarak kullanilacagi ifade etmek icin @Injectable decoratoru kullanilmaktadir.
+
+
+    @Indectable providedIn Parametresi: 
+
+        -Injectable nasil inject edilecegini soyleyen parametredir. 
+
+            --any: Service'lerin birden fazla instance olacak sekilde provide edilmasini saglar. Her module ici ayri instance uretecektir. Mikroduzey optimazasyonlar icin kullanilir.
+
+            --platform: Angular Universal gibi platform bagimsiz uygulamalar icin tasarlanmis servislerde kullanilir. servislerin platfirmlara ozgu oldugunu ifade ederler.  Bu uygulamalarin hem server hem de client taraflarinda calisma modu gibi farkli kosullari mevcuttur. bu nedenle bir servis platdorma ozgu oldugunda her iki tarafta da farkli bir sekilde provide edilmesi gerekebilir. 
+
+            --root:  Uygulamanin ana module;une servisi singleton olarak saglayacagini gosterir.
+
+            @Injectable{providedIn:'root'}
+
+        Provider'da ki Service Inject Inject Etme @Inject decoratoru.
+
+            constructor(private productService: ProductService) { } -- Otomatik yontem
+            constructor(@Inject(ProductService) private productService) { } -- Manuel yontem
+
+        
+================================================================================================================================
+
+
+
 

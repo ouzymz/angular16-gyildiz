@@ -9,6 +9,7 @@ export class ProductService {
   }
 }
 
+
 //bu sekilde injectable olarak da declere edilebilir. bu sayede app.module.ts'deki providers'a declere etmeye gerek kalmaz.
 @Injectable({providedIn: 'root'})
 export class InjectableProductService {
@@ -26,3 +27,13 @@ export class Product {
 }
 
 
+@Injectable() //Inject edilebilir bir yapidir anlami tasir ve ihtiyaci olan baska dependency instacelerini yani bagimliliklarini angularin otomatik olarak inject etmesini saglar. Buna ek olarak loggerService'in de istenilen katmanin provider'ina declere edilmesi gerekir.
+export class ProductServicesWithLogger{
+    constructor(private loggerService:LoggerService ) { loggerService.log("ProductServicesWithLogger instance created"); }
+}
+
+export class LoggerService{
+    log(message:string){
+        console.log(message);
+    }
+}
