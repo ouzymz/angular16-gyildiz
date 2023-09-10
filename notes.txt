@@ -423,8 +423,41 @@ DERS 16: VALIDATION NEDIR?
     
         -Dinamik olarak validatorlara mudahale ettigimizde updateValueAndValidity fonksiyonuyla ynei duruma gore validatorlarin calistirilmasi icin angular mimarisi zorlanabilir. Bu durumda updateValueAndValidity fonksiyonu ile validatorlarin calistirilmasi saglanabilir.
 
+================================================================================================================================
 
 
+DERS 17 : ANGULAR DEPENDENCY INJECTION
 
+    -Dependency injection yapmis oldugumuz kodsal calismalarda yeniden kullanilabilir bir davranis sergilememizi saglayan design pettern dir.
+
+    - Dependency Injection'in temel gayesi bu dependencyleri mumkun mertebe yonetilebilir bir hale getirmek ve kodsal degisiklik sureclerinde bagimliligin getirisi olan olasi direncleri neticesinde olabilecek hatalara karsi onlem alabilmektir. 
+
+    -- Dependency Injection Nasil Uygulanir ?
+
+        --Angular mimarisinin temelinde dahili olarak gelmektedir. 
+
+        --Ihtiyac olan servis contructor method'ta newlenerek olusturdugu senaryoda tight coupling durumu olusmus olur. Bu servicete yapilan bir degisiklikte kullanan siniflarda degisiklik ihtiyaci olusturabilir. Bu gibi durumlardan kacinmak icin dependency injection kullanilir. Misal olarak servisimizn constructorina parametre vererek degistirdigimiz durumlarda veya bu sinifi test etmek istedigimiz senaryolarda ister istemez bu bagimliligin getirisi olan yan etkiler soz konusu olacaktir. Ayrica service'in kullanildigi product sinifina her ihtiyac duydugumuzda service'inde tekrar tekrar uretilmesi soz konusu olacaktir. Halbuki nesnenin s'gleton olarak b'r kere olusturulup ihtiyac duyuldugu yerlerde bu olusturulan service uzerinden kullanilmasi cok daha mantikli olacaktir. 
+
+        --contructor(private productService: ProductServis) {} //bu sekilde bir constructor olusturulursa angular mimarisi tarafindan otomatik olarak bir instance olusturulur ve bu instance'i kullanabiliriz.
+
+        --AppComponent tarafindan ihtiyac duyulan sinfi constructor uzerinden IoC Container'indan tabep etmis oluyoruz. Bu talebi gerceklestirebilmek icin ProductService'in bu calismanin yapildigi module'un providers alanina asagidaki gibi eklenmesi gerekmektedir. 
+
+            *Providers : [ProductService]
+
+    --Angular'da Dependency Injection Aktorler:
+
+        - consumer : dependency injection yapilanmasindan yararlanan siniflardir.(component, directive, service.. )
+
+        - dependency : consumer siniflarin ihtiyac duydugu servislerdir.
+
+        - DI Token : dependency injection yapilanmasinda kullanilan bir anahtar kelimedir. Bu anahtar kelime uzerinden DI Container'a ihtiyac duyulan servislerin talep edilmesi saglanir.
+
+        - provider : Injection Token esliginde depency'lerin tutuldugu yerdir. 
+
+        - injector : DI Container'dir. DI Token esliginde provider'lari tutar.
+
+    -Dependency Injection Kullanimi:
+
+        -
     
 
