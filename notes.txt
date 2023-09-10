@@ -357,7 +357,74 @@ onlyself: true, //sadece kendini kontrol et demek.
 
 DERS 15: CHANGING THE STATUS 
 
-    markAsTouch: form elemaninin ya da formun kendisinin degerinin degistirildigini 'touched' propertyleri degistirilir.
+
+================================================================================================================================
+
+DERS 16: VALIDATION NEDIR? 
+
+    -form yapilanmalarinda inputun formatinin dogrulanmasi islemidir.
+
+    validationlar sync validator ve async validators olmak uzere iki farkli yapiyla kontrol edilirler.
+
+        --sync validator dogrulama calistirilir ve heme n ardindan geriye sonuc doner. Varsa gecersizlik hata listesi olarak dondurur yahut bir hata yoksa eger null dondururler 
+
+        --async validatoralrda ise dogrulamalar promise veya obsevable dondururler subscribe olunabilir bir davranis sergilerler. 
+
+    Built-in Validators::
+
+        ReactiveFormsModule uzerinden import edilirler.
+        Validators.required
+
+        --min: minimum degeri belirler.
+        --max: maximum degeri belirler.
+        --required: bos gecilemez. 'Validators.required'
+        --requiredTrue: true degeri gonderilmelidir. Genellikle checkboxlar uzerinde kullanilirlar. 
+        --email: email formatinda olmali.
+        --minlength: minimum uzunlugu belirler.
+        --maxlength: maximum uzunlugu belirler.
+
+    Dogrulama ve Hata Mesajlari ELlde Etme::
+
+        -Bunun icin FormControl nesnelerinin errors propertusinden yapararlanilir.
+        -Her form ogesinin validasin sureci neticesinde varsa hata kendisiyle iliskilendirilmis bir error nesnesi mevcut olacaktir. 
+        
+    Custom Validator Olusturma: 
+
+        -Angular mimarisinda ValidatorFn interfaci ile custom validatorler olusturulabilir.
+        -Geriye validationErrors  nesnesini ya da null deger donduren ve parametre olarak AbstractControl turunden deger alan bir fonksiyon gibi dusunulebilir
+        
+    Parametreli Custom Validator Olusturma ve Kullanma 
+
+        -ilgili validator ts dosyasinda ornegi vardir.
+
+    Asynv Validator
+
+        -Yukaridaki butun validatorlar dogruma islemi tamamlandiktan sonra sonuc dondurmekte yani synv validator davranisi sergilemektedirler. 
+        
+        -Async validatorler ise promise yada observable dondurmekte ve bu nedenle subscribe olunabilir bir davranis sergilemektedirler.
+        
+        -genellikle bu validator yapisi dogrulama icin gerekli olan verilerin disbir servisten alindigi uzun soluklu surecler icin kullanilmaktadirlar. 
+        
+        -Ornek Case: kimlik no dogrulamasi. kullanicinin girmis oldugu kimlik bilgileri devlet servisleri uzerinden teyit alir. bu surec uzun soluklu bir surec oldugu icin async validator kullanilir. sonuc donusu baska isleme bagli olan ve ne kadar sureceegi kestirilemeyen durumlarda async validator kullanilir.
+
+    Karsilastirma Validatorleri
+
+        -iki kontrol karsilastirilip birbirine esit olup olmadiklarinin kontrol edilmesi islemidir. 
+
+        -birden fazla kontrolde karsilastirma validatoru kullanilacaksa bu validatorler FormGroup uzerinden kullanilir.
+
+    Dinamik Olarak Validator Ekleme ve Cikarma
+
+        -FormControl nesnesi uzerinden setValidators/setAsyncValidators ve clearValidators methodlari ile dinamik olarak validator ekleme ve cikarma islemleri gerceklestirilebilir. Runtime validation degisikliklerin icin onemlidir. set validator uygunlandigi an diger validatorlar silinir. Bu yuzden olmasi gereken butun validatorlar hesaba katilmalidir. 
+
+        -cleanValidators methodu ile validatorlerin hepsi silinebilir.
+
+    Validator Durumlarini Guncelleme 
+    
+        -Dinamik olarak validatorlara mudahale ettigimizde updateValueAndValidity fonksiyonuyla ynei duruma gore validatorlarin calistirilmasi icin angular mimarisi zorlanabilir. Bu durumda updateValueAndValidity fonksiyonu ile validatorlarin calistirilmasi saglanabilir.
+
+
+
 
     
 
