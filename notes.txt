@@ -514,5 +514,50 @@ DERS 18 : DEPENDENCY INJECTION V2
 ================================================================================================================================
 
 
+DERS 16: PROVIDE DETAYLARI, DI TOKEN VE PROVIDER TURLERI::
 
+    -Povidera koyulan servislerin bir belirtec olan DI token ile alabiliriz.
+
+    3 farkli token tipi vardir. Bunlar;
+
+        --Type
+        --InjectionToken
+        --stringToken
+    
+    Ilgili dependencynin nasil olusturulacagina dair de konfigurasyonlar vardir bunlar;
+    
+        --useClass:
+        
+        --useValue : basit metinsel degerleri provide etmek icin kullanilir. 
+
+        --useFactory: 
+        --useExisting
+
+    providers[{provide: ProductService, useClass: ProductService}] //bu sekilde bir provider tanimlamasi yapilirsa angular mimarisi tarafindan ProductService'in bir instance'i olusturulur ve bu instance'i kullanabiliriz.
+
+    TypeToken:
+        provide : DI Token olan yer.
+        provider(useClass,useValue ...) : DI Token'in ne olacagini belirten yer. 
+
+    StringToken: 
+                providers : [{provide: "ProductService", useClass: ProductService}]
+                constructor(@Inject("ProductService") private productService) { } -- Manuel yontem
+
+    !!!USEVALUE vs USEFACTORY : Usevalue ile de bir fonsiyon dondurlebilir ancak bu donen fonksiyon class icinde kullanilacak salt fonksiyondur. use factory ile fonsiyonun returnu gor islem yaptiririz. 
+
+    Aliased Class : 
+
+        providers : [
+            A,
+            {provide: B, useClass: A},
+            {provide: C, useExisting: A}]
+
+        // ilk provider icin A instance olusturulur
+        // ikinci provider icin de  A  instance olusturulur
+        // ucuncu providera ilk provider'in instance'i inject edilir. 
+
+    
+        
+    
+    
 
