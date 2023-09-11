@@ -561,9 +561,37 @@ DERS 20: DEPENDENCY INJECTION - IV - @SKIP -@SKIPSELF - @OPTIOMAL
     -- @Self - @SkipSelf - @Optinonal : 
         
         -- @Self : Self decorator'da ilgili dependency yalnizca gecerli olan componentin yada directive'inin providerinda cagirildiysa kullanilmasina izin verir. .     (ornegi second component icinde bulunmaktadir.)
-        
 
+        (ilgili yapilarla alakali ornekler 10. ornek projede notlariyla birlikte aciklanmistir)
+        
+================================================================================================================================
+
+
+DERS 21: ANGULARDA SERVICE NEDIR? NE AMACA HIZMET ETMEKTEDIR?
+
+    -Fiili bir islem yoneten yani business logic sorumlulugu ustlenen yapilara service adi verilir. 
+    -servis sayasinde componentte yapilan islemlerden kurtuluruz.
+    -Angularda servicelerin isimsonuna Service olarak ekleme yapilir. 
     
+    Service gorevleri : 
+
+        -- Herhangi bir dis servisten yahut API'dan veri alabilir.
+        -- uygulamanin genel state'ini tutabilir
+        -- Componentler arasinda veri iletisimi saglanabilir. 
+
+    Service Olusturma :
+
+        -- @Injectable decoratoru ile isaretlenen bir sinif olusturulur. 
+        -- ng g s/service services/Product // bu CLI ile ici bos injectable decoratoru ile isaretlenmis Sonu Service olarak isimlendirilmis Service adinda services klasoru altinda bir sinif olusturulur. 
+    
+    Service  Uzerinden Component Communication : 
+
+        -Servislerin genellikle bir isleme ozel fiili sorumlulugun ustlenilmesinin disinfa birden gazla componet arasinda iletisimin saglanmasi gerektigi senaryolarda da kullanildigini gorebilirsiniz. 
+        (Orneklendirme kod uzerinde yapilmistir.. 11. ornek proje...)
+
+
+================================================================================================================================
+
         
     
     
