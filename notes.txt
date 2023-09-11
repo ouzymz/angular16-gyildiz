@@ -556,6 +556,13 @@ DERS 16: PROVIDE DETAYLARI, DI TOKEN VE PROVIDER TURLERI::
         // ikinci provider icin de  A  instance olusturulur
         // ucuncu providera ilk provider'in instance'i inject edilir. 
 
+DERS 20: DEPENDENCY INJECTION - IV - @SKIP -@SKIPSELF - @OPTIOMAL 
+
+    -- @Self - @SkipSelf - @Optinonal : 
+        
+        -- @Self : Self decorator'da ilgili dependency yalnizca gecerli olan componentin yada directive'inin providerinda cagirildiysa kullanilmasina izin verir. .     (ornegi second component icinde bulunmaktadir.)
+        
+
     
         
     
