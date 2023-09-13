@@ -593,6 +593,91 @@ DERS 21: ANGULARDA SERVICE NEDIR? NE AMACA HIZMET ETMEKTEDIR?
 ================================================================================================================================
 
         
+DERS 22: ROUTING -I- TEMELLERI NELERDIR? NASIL YAPILANDIRILIR?
+
+    Angular mimarisinde bir view'den digerine gidebilmek icin yada componenten digerine gecis yapabilmek icin kullanilan bir yapiya sahiptir.
+
+    Angular Router bir moduldur ve @angular/router dizininde built-in olarak gelmektedir. bu modul route uzerinden componentler ver izerinde gezinti yapabilmemizi ve bunun icin gerekli olan tum service provider'larini saglamaktadir.
+
+        -Adres cubugundan ilgili URL ile belirli bir componente getirmek.
+        -component query string degerlerin gonderme.
+        -browser'in ileri ve geri dugmelerini aktiflestirme/kullanilabilmektedir
+        -dinamik olarak view yukleme.
+        -rotalar uzerinde yetki kontrolu gerceklestirme.
     
+    Angular Router Bilesenleri :
+
+        Router: angular'da tarayici uzerinden geri ilere dugmelerini aktiflestiren ve componentler arasinda gezinilmesini saglayan yapidir. 
+
+        Route: component ve view'ler arasinda gezinmeyi saglayan yapidir. her bir route bir ath ve o path ile eslesen bur componentten olusur. 
+
+        Routes: Tum rotalari iceren bir dizi yapidir.
+
+        Router Outlet: tarayicinin adres cubugundaki URL ile uyumlu olan route;un view'in hangi alanindagosterilecegini ifade eden yapi. 
+
+        RouterLink: HTML ogesi olan a tag'ini toute'a baglayan direktiftir. 
+
+        RouterLinkActive: RouterLink ile birlikte kullanilan baska bir direktiftir. kullanildigi a tag'one mevcut route durumuna dayali aktif bir css classi ekler.
+
+        Activated Route : Component class'i uzerinden etkin URL'I elde etmemizi saglayan siniftir. O anki etkin route'u temsil eder. 
+
+        Router State : Route uzerindeki tum bilgileri vedurumlari iceren bir nesnedir uygulamanin hangi rotda oldugunu ve rotanin nasil dagistigini takip etmemizi saglar.
+
+    Angular Router Yapilandirilmasi: 
+
+        1- <base href> ogesini ayarlama
+
+            --Angular uygulamasinda bu etiket rotalarin belirlenmesinde kullanilacak olan temel UrL'i belirtir. Bu --uygulamadaki tum rotalarin kok dizinden degil belirtilen temel URL'den baslayacagini belirtir.
+            --<base herf> etiketi uygulamadaki index.html dosyasinda head etiketinin icinde yer almalidir.
+
+        2- Component icin rotalarin tnaimlanmasi
+
+            --componentler icin rotolarin tanimlanmasi. (12. proje routes kalasoru icinde ornegi vardir.)
+
+        3- Routelari kaydederek uygulamaya gecme 
+
+            --Rotalari kaydederek uygulamaya gecirme RouterModule import edilmeli.APPMODULE
+            RouterModule.forRoot(routes)
+
+        4- yonlendirici rota/url ayarlama ve herhangi bir HTML nesnesi ile eslestirme
+
+            sayfada nerede kullanilacaksa linkleri olusturma islemidir.
+            <a routerLink="contact">Contacts</a>
+
+
+        5- Yeni rotaya uygun component'in yuklenecegi alani belirleme 
+
+            Son olarak yeni rotaya uygun component'in yuklnecegi alanin asagidaki gibi belirlenmesi gerekmektedir.
+            <router-outlet></router-outlet>
+
+    App Routing Modulunun Olusturulmasi: 
+
+        angular uygulamasinda router yapilandirmasini biraz once gordugunu gibi uygulamanin herhangi bir yerinde tasarlanabilir ve kullanilabilir. 
+
+        ama angular bunu uygulama olustururken kullaniciya sorarak default yuklamesini yapar
+
+    RouterLink Parameters Array: 
+
+        --RouterLink direktifi ile birlikte kullanilan parametrelerin bir dizi olarak tanimlanmasi gerekmektedir. 
+
+        --<a [routerLink]="['/products', product.id]"> {{product.name}} </a> gibi bir kullanim soz konusudur. 
+        (ornegi uygulamada mevcuttur)
     
 
+    RouterLinkActive : 
+
+        mevcut rotayla eslesen link dinamik olarak css eklememizi saglar.
+            routerLinkActive="activeLink" //HTML'DE yerinde
+            .activeLink{color:coral;} //CSS'de yeri
+
+    Varsayilan Route Ayarlama: 
+            
+            --Uygulama ilk calistirildiginda hangi rotanin yuklenecegini belirlemek icin kullanilir. 
+            --{path: '', redirectTo: 'products', pathMatch: 'full'} //bu sekilde bir tanimlama yapilirsa uygulama ilk calistirildiginda products rotasi yuklenecektir.
+
+            buradaki pathmacth alani router'in utl'i nasil eslestireceginin kararini verdirmektedir. full ve prefixte degerleri alabilir. full : route tanimindaki yolun tamamiyla eslesmesini gerektirirken, prefix iser URL'in ornekle eslesmesini yeterli gormektedir. 
+
+            Ornegin; full'de route tanimi '/users'  ise direk o url ile eslenecek, ama prefixte '/users' ise '/users/1' ile de eslesme saglayacaktir.
+
+    Wildcard Route Ayarlama:
+            -Joker Karakterli Yol olarak tarif edilir. '**'

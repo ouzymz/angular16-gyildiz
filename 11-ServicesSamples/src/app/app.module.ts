@@ -17,7 +17,7 @@ import { FormsModule } from '@angular/forms';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule // bunu eklemeden kullaninca form submit edince degeri aliyor ancak sayfayi yeniliyor ve form sifirlaniyor. nedenini arastir.
   ],
   providers: [UserService],
   bootstrap: [AppComponent]
