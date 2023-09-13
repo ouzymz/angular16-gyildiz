@@ -9,6 +9,7 @@ import { ContactComponent } from './contact/contact.component';
 import { RouterModule } from '@angular/router';
 import { routes } from './routes/routes';
 import { ErrorComponent } from './error/error.component';
+import { APP_BASE_HREF } from '@angular/common';
 
 
 @NgModule({
@@ -24,7 +25,9 @@ import { ErrorComponent } from './error/error.component';
     AppRoutingModule,
     // RouterModule.forRoot(routes) -- usteki approutingmodule uzerinden islemlar tamamlandi.
   ],
-  providers: [],
+  providers: [
+    {provide:APP_BASE_HREF,useValue:"/DEMO"}, // bu alan sayasinde indec.html deki base href i degistirebiliriz. 
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

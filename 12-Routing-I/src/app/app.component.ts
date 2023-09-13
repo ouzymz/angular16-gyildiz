@@ -7,4 +7,11 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = '12-Routing-I';
+
+
+  //HTML 5 style routing
+  go(){
+    // history.pushState({message:"merhaba"},'title',"#/a/b/contact");
+    window.history.pushState({message:"merhaba"},'title',"/a/b/contact");
+  }
 }

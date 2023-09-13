@@ -681,3 +681,68 @@ DERS 22: ROUTING -I- TEMELLERI NELERDIR? NASIL YAPILANDIRILIR?
 
     Wildcard Route Ayarlama:
             -Joker Karakterli Yol olarak tarif edilir. '**'
+
+
+DERS 23: ROUTING - II -  LOCATION STRATEGIES -  PATH | HASH
+
+    Router'da Location Stratedies Nedir? 
+
+        -HashLocationStrategies # sembolu kullanir. Ozellikle esk itarayicilarda' URL degisikliklerinin algilanmasi ve yonlendirmelerin yapilmasi icin kullanilabilir.
+
+        -PathLocationStrategy Normal URL'leri kullanarak yonlendirme yapar. ozellikle modern tarayicilarda tercih edilir. 
+
+    Neden Bustrategilere Ihtiyacimiz Olacak?
+
+        URL'ler local olarak kullanilmakta ve sadece tarayici tabanli bir davranis sergilenmektedir. 
+
+    Client-Side Routing: 
+
+        Multi page application olan bir uygulamanin bir sayfanin goruntulemesi gerektigi takdirde bu istegi sunucuya gondermesi gerekmektedir. Ancak angular uygulamalari single page applicationlardir. ve tum componentler tek bir sayfada goruntulanirler. 
+        Simdi, Angular ana htmlde kullanilan taglar ilgili alana componentin dinamik bir sekilde yuklanmasini saglar, Bu davraniz bir routing davranisidir. Nede olsa sayfada Farkli bir sayfanin icerigi gomulmekte yani farkli bir sayfa tarayicida cagirilmaktadir.
+        bu sebeple angularda tum bunlar arka planda gerceklesir. boylebir senaryoda URL ile bir davranis soz konusu degildir. 
+
+        Dezavantajlari: 
+            -URL bazli sayfa yenilemesi yapilmaz. 
+            -URL kullanarak veri transferi yapilamaz. url'de veri tasinmaz
+            -Tarayicidaki geri dogmesini kullanamazsiniz
+            -SEO mumkun degildir. 
+        
+        Client Side Routig yonlendirme islemini tarayicida calistirarak sunucu tarafi yonlendirmesini taklit etmektedir. 
+        Adres cubugundaki URL'i degistirmektedir ve tarayici gecmisini guncellemektedir. ancak butun bu islemleri gercekte sunucuya bir istek gondermeksizin saglamaktadir.
+
+    HASH Style Routing: 
+
+        Hash SR. URL'de # karakterinden sonra gelen bir dize kullanmaktadir. misal olarak; localhost:5/#/a-component gibi bir url yapisi olusturulur.
+
+    Location Strategies : 
+
+        PathLocationStrategy: 
+
+            -Normal URL'leri kullanarak yonlendirme yapar. 
+            -ozellikle modern tarayicilarda tercih edilir.
+            Angularin default firmatidir. 
+
+            Artilari: 
+                -http://example.com/foo gibi url'ler urtir.
+                -server-side rendering'i destekler.(SEO calismalari yapabilmemize destek saglar.)
+                
+            Eksileri: 
+                -eski tarayicalarda desteklenmemektedir. 
+                -Sunucu destegi gerekir.
+
+        HashLocationStrategy: 
+
+            artilari: 
+                -eski tarayicilarla uyumludur.
+                -Sunucu destegi gerekmez.
+
+            eksileri:
+
+                -/#foo gibi kirli URL'ler uretir.
+                -Server-side Rendering'i desteklemez.
+
+
+            
+
+
+sabanci-dx ::>>
