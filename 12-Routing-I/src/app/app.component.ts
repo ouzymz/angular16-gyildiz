@@ -1,17 +1,19 @@
 import { Component } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
-  title = '12-Routing-I';
+  title: string;
+
 
 
   //HTML 5 style routing
-  go(){
+  go() {
     // history.pushState({message:"merhaba"},'title',"#/a/b/contact");
-    window.history.pushState({message:"merhaba"},'title',"/a/b/contact");
+    window.history.pushState({ message: 'merhaba' }, 'title', '/a/b/contact');
   }
 }

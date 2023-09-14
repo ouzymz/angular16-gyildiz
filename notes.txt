@@ -682,6 +682,7 @@ DERS 22: ROUTING -I- TEMELLERI NELERDIR? NASIL YAPILANDIRILIR?
     Wildcard Route Ayarlama:
             -Joker Karakterli Yol olarak tarif edilir. '**'
 
+================================================================================================================================
 
 DERS 23: ROUTING - II -  LOCATION STRATEGIES -  PATH | HASH
 
@@ -742,7 +743,36 @@ DERS 23: ROUTING - II -  LOCATION STRATEGIES -  PATH | HASH
                 -Server-side Rendering'i desteklemez.
 
 
-            
+================================================================================================================================
 
+DERS 24: ROUTING - III - ROUTE PARAMATERS
 
-sabanci-dx ::>>
+    Route Paramater Nedir? 
+
+        -Route parametreleri, URL'de belirli bir yere yerlestirilen ve URL'den okunabilen degerlerdir. URL uzerinden deger tasinabilmesini saglayan yapilanmadir. 
+    
+    Route Paremetreleri Nasil Tanimlanir? 
+
+        -Tanimlanan route icinde parametre alaninin belirlenmesi gerekir. 
+            {path: 'products/:id', component: ProductDetailComponent}
+            //burada :id parametresi tanimlanmistir.
+            //'products/:id/:name/:package' gibi birden fazla parametre de tanimlanabilir.
+        -Angularda route parametreleri nullable yapilamaz bu yuzden butun her view icin payri route olusturulmalidir.
+
+        -Degiskeni asagidaki gibi okuyabilirsiniz. 
+            <a [routerLink]="['/products', product.id]"> {{product.name}} </a>
+
+    Observable Kullanarak URL Parametrelerini Okuma: 
+
+        -ActivatedRoute Observable bir davranisla parametrelerini okumamizi saglayabilir.
+
+    Peki Activated Route Parametre alirken hangisini kullanmaliyiz?
+
+        snapshot: Tek seferlik bir yakalama gerekliyse snapshot kullanilabilir
+
+        observable uzerinden takip yapmak mantikli. Static olarak guncel degerleri yakalamak icin observable mantikli.
+
+================================================================================================================================
+
+DERS 25: CHILD ROUTES / NESTED ROUTES: 
+
