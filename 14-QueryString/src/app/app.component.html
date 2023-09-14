@@ -1,0 +1,10 @@
+<a routerLink="firstComponent" [queryParams]="{ value1: 187 }">first</a> |
+
+<!-- burada yalnizca second;un value degerini tutar -->
+<a routerLink="secondComponent" [queryParams]="queryParameters" [queryParamsHandling]="'preserve'">second preserve</a> | 
+
+<!-- burada merge eder iki value degerini de tutar -->
+<a routerLink="secondComponent" [queryParams]="queryParameters" [queryParamsHandling]="'merge'">second merge</a>
+
+
+<!-- <router-outlet></router-outlet> --> <!-- subcripbe islemini app componente tasidigimiz icin buna gerek kalmadi. -->

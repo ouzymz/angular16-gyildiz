@@ -776,3 +776,63 @@ DERS 24: ROUTING - III - ROUTE PARAMATERS
 
 DERS 25: CHILD ROUTES / NESTED ROUTES: 
 
+    Child/Nested route nedir?
+        -Componenler en ustte bir root componente sahip olunan bir agac hiyerarsi yapisini takip etmektedirler.
+
+            -app-comp .. product-comp .. productDetail-comp
+
+            hhtp://localhost:4200/products/detail/3
+
+            {path:"product",component:ProductComponent, 
+                children:[
+                    {path:"detail/:id",component:ProductDetailComponent}
+            ]}
+
+    Child Route Altina Child Route TanimlamaŞ 
+
+        (ilgili calisma proje 13'te yapilmistir.)
+
+
+================================================================================================================================
+
+DERS 26 : ROUTING V - QUERY STRING: 
+
+    Ğuery String Nedir? 
+
+        -Query String, URL'in sonunda yer alan ve ? ile baslayan parametrelerdir. 
+        -Query String ile URL'de parametrelerin gonderilmesi saglanir. 
+        -Query String ile gonderilen parametreler URL'in sonunda yer alir ve ? ile baslarlar. 
+        -Query String ile gonderilen parametrelerin isimleri ve degerleri = ile ayrilirlar. 
+        -Query String ile birden fazla parametre gonderilebilir. Bu durumda parametreler & ile ayrilirlar.
+
+        Query string ile gonderilen parametreler icin ayri bir path route tanimlanmasina gerek yoktur. 
+
+        Query stringte parametre kullanilsin ya da kullanilmasin ilgili route gidilebilir. Route Parametre parametresiz ilgili coponente ulasamaz. 
+
+        Route parametre kullanmaya ozen gosterilmeli. Parametre daha gizli bir sekilde aktarildigi icin daha guvenli bir yontemdir.
+
+    Kullanimi 
+
+        <a routerLinkActive="activeLink" [routerLink]="['/products']" [queryParams]="{order:'popular'}">Popular Products</a>
+
+
+    URL'deki Query Degerlerini Okuma
+
+        queryParams
+        queryParamMap
+
+        snapshot.queryParamMap.get('order') //snapshot ile okuma
+        
+        this.route.queryParamMap.subscribe(params => { //observable ile okuma
+            this.order = params.get('order');
+        });
+
+
+    quertParamsHandling: !!!Onemli Konu!!! 
+
+        Angular mimarisinde her routing islemi neticesinde default olarak URL'deki query string'ler kaybolacaktir. bu varsatilan davranisi degsitirebilmek icin queryParamsHandling stratisini asagidaki gibi kullanabiliriz.
+
+            queryParamsHandling:"preserve" //bu sekilde bir tanimlama yapilirsa query stringler kaybolmaz. Yonlendirilen sayfadaki query string degerlerini getirmez. 
+
+            queryStringHandling: "merge" //bu sekilde bir tanimlama yapilirsa query stringler birlestirilir.
+================================================================================================================================
