@@ -1,0 +1,7 @@
+<p>about works!</p>
+
+<ul>
+  <li *ngFor="let photo of photos">
+    <a [routerLink]="[photo.id]">{{ photo.url }}</a>
+  </li>
+</ul>

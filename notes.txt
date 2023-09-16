@@ -835,4 +835,71 @@ DERS 26 : ROUTING V - QUERY STRING:
             queryParamsHandling:"preserve" //bu sekilde bir tanimlama yapilirsa query stringler kaybolmaz. Yonlendirilen sayfadaki query string degerlerini getirmez. 
 
             queryStringHandling: "merge" //bu sekilde bir tanimlama yapilirsa query stringler birlestirilir.
+
 ================================================================================================================================
+
+
+DERS 26 : ROUTING VI - GUARD MECHANISMS:
+
+    -Angular Guards Nedir?
+        
+        -Uygulamadaki rotalara erisim izni vermek ya da reddetmek icin kullanilan yapilardir. 
+        -Genllikle kullanicilarin oturum islemleri, kimlik dogrulama surecleri erisim yetkileri guard yapilari uzerinden kontrol edilir. 
+        -Angular'da 4 farkli guard yapisi vardir. 
+            
+            --CanActivate
+                Kullanici tarafinda erisilmek istenen rota erisim iznini kontrol eder.
+            
+            --CanActivateChild
+                Bu guard bir child routa'a gidilip gidilemeyecegini belirleyen yapidir. 
+
+            --Resolve
+                Bu guard yapisi bazi gorevleri tamamlanana kadar rotanin etkinlestirilmesini gecikleyecektir. Api'dan verilerin hazir edilmesi gereken durumlarda kullanilir. 
+              
+            --CanLoad[iptal edildi](CanMatch)
+                Bir modulun kontrollu bir sekilde yuklanmasini saglar. CanActivate Rotanan erisimini kontrol edip gerekirse engellerken, CanLoad ise lazy loading ile yuklenecek modullerin yuklenmesini kontrol edecek ve gerektigi takdirde engelleyecektir. Haliyle ilgili modul icerisinde tum ogeler korunmus olunacak ve kismi performansa da katkisi olacaktir.
+
+                normalde bir path bir kere tnaimlanir. Ornegin giris yapmis bir user'in istek attigi route'ile gelecek sayfa ile giris yapmamis bir clientin istek attigi routeun gosterecegi sayfalarin farkli olmasini saglar.
+
+                {path:'', component: HomeComponent, canActivate:[AuthGuard]} //bu sekilde bir tanimlama yapilirsa sadece giris yapmis olan kullanici bu route'a erisebilir.
+                {path:'', component: HomeComponent} //Burada ise giris yapmamis sekilde tum kullanici bu route'a erisebilir.
+
+            --CanDeactivate
+                Gecerlı rotadan cikmak istedigi durumu kontrol eder. Yani bir sayfa gecisinde islem yarim kaldiysa bu alert mesaji gosteren yapi gibi dusunulebilir.   
+
+            (ornek proje de eski guard yapisi ile yeni guard yapisi verilecektir.15.proje)
+
+    Eski Usul:
+
+    1-Ihtyac duyulan guard icin bir sinif olusturulur ve hangi guard kullanilacaksa o guardin interfaceinden turetilir. 
+    2-guard'in yapacagi islemi metot icerisinde uygulayiniz
+    3-guard'i import ediniz. 
+    4- guard'i ilgili route'a uygun property uzerinden ekleyiniz .
+
+     Angular CLI :: ng g guard guards/Authentication --skipTests=true (Guard injectable ile isaretlenmistir yani ozunde bir servicetir.)
+
+     CanActivate - CanActivateFn :
+     -Route'a gonderirlerken tetiklenecek olan guard yapisi icin kullanilir.
+
+     canActivateChild - canActivateChildFn :
+     -Child route'lara gonderirken tetiklenecek olan guard yapisi icin kullanilir.
+
+     canDeactivate - canDeactivateFn :
+     -componenetten cikarken tetiklenecek olan guard yapisi icin kullanilir.
+
+     resolve - resolveFn :
+
+     - verilerin apilardan gelip gelmedigini kontrol eder.componenet gecisleri arasinda bekleme olayi yaratir.
+
+     -inject(httpClient) :::> bu harika angular 14'te gelmistir. bu sayede guard yapilari siniflardan turetilmek yerini (ki class olmazsa dep injection yapamayacagi icin http client gtiremeyecekti. ) 
+
+CanMatch - CanMatchFn
+
+    -Lazy loading ile yuklenecek modullerin yuklenmesini kontrol edecek ve gerektigi takdirde engelleyecektir. Haliyle ilgili modul icerisinde tum ogeler korunmus olunacak ve kismi performansa da katkisi olacaktir.
+
+    -Normalde bir path bir kere tnaimlanir. Ornegin giris yapmis bir user'in istek attigi route'ile gelecek sayfa ile giris yapmamis bir clientin istek attigi routeun gosterecegi sayfalarin farkli olmasini saglar.
+
+    {path:'', component: AdminHomeComponent, canActivate:[IsAdmin]} //bu sekilde bir tanimlama yapilirsa sadece giris yapmis olan kullanici bu route'a erisebilir.
+    {path:'', component: UserHomeComponent,[IsUser]} //Burada ise giris yapmamis sekilde tum kullanici bu route'a erisebilir.
+
+    -CanMatch ile birlikte kul
