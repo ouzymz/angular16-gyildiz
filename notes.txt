@@ -1092,4 +1092,45 @@ DERS 31: PRELOADING STRATEGY
 
 ================================================================================================================================
 
-    
+DERS 32: STANDALONE COMPONENTS & DIRECTIVES & PIPES
+
+    Standole Element Nedir?
+        
+        -Module'den bagimsiz calisan elementler olusturmak icin 
+        kullanilir. 
+        -Module'den kaynaklanan maliyeti torpulemek icin olusturmustur.
+        -Angular Learning curve'ini kolaylastirmak icin olusturulmustur.
+        -Angular 9 ile birlikte gelmistir.
+        
+    Standole Component Olusturma:
+
+        -ng g c standalone/standalone -standalone (export ile modul icinde kullanilabilmesi saglanir.)
+
+    Standalone Component Kullanimi:
+
+        -kulanilacak module'de import edilir.
+        -<app-standalone></app-standalone> //bu sekilde kullanilir.
+
+        -standalone componenetler baska bir standalone componenet import edilerek kullanilabilir. 
+
+    Bir Standalone Yapida Moduler Yapilari Kullanmak:
+
+        imports: [CommonModule, FormsModule, ReactiveFormsModule, RouterModule.forChild(routes)], gibi standalone component icinde ilgili modulu import edebilirsin. 
+
+    Standalone Yapilarda Routing ve Lazyloading Kullanimi:
+
+        Uygulama standalone altyapisi sayesinde module yapidan siyrilir. moduler yapida loadchilddren ile route belirtigimiz alan loadComponent seklinde belirtilir.
+
+        {path:'standalone', loadComponent: () => import('./standalone/standalone.module').then(m => m.StandaloneModule)}
+
+    Standalone Componentleri Kullanarak Uygulamayi Onyukleme: 
+
+        Ana module'un uygulamadan kaldirilmasi gerekmektedir. 
+
+        main.ts' te bootsrapApplication(StandaloneComponent) 
+        index.html'de app-root kaldirilir. app-standalone getirilir.
+
+    CommonMudule Yeniligi: 
+
+        builtin olarak gelin directiveler, pipelar, servicelerfalan common module icine alinmistir. bunun yerine kullanilacak elementlari kullanilacak component import ederek kullanmamizi saglar. CommonModule import etme ihtiyaci ortadan kaldirilmistir. 
+
