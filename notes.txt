@@ -895,11 +895,36 @@ DERS 26 : ROUTING VI - GUARD MECHANISMS:
 
 CanMatch - CanMatchFn
 
-    -Lazy loading ile yuklenecek modullerin yuklenmesini kontrol edecek ve gerektigi takdirde engelleyecektir. Haliyle ilgili modul icerisinde tum ogeler korunmus olunacak ve kismi performansa da katkisi olacaktir.
-
-    -Normalde bir path bir kere tnaimlanir. Ornegin giris yapmis bir user'in istek attigi route'ile gelecek sayfa ile giris yapmamis bir clientin istek attigi routeun gosterecegi sayfalarin farkli olmasini saglar.
 
     {path:'', component: AdminHomeComponent, canActivate:[IsAdmin]} //bu sekilde bir tanimlama yapilirsa sadece giris yapmis olan kullanici bu route'a erisebilir.
-    {path:'', component: UserHomeComponent,[IsUser]} //Burada ise giris yapmamis sekilde tum kullanici bu route'a erisebilir.
+    {path:'', component: UserHomeComponent,[IsUser]} 
 
-    -CanMatch ile birlikte kul
+
+Guardlarin Calistirilma Siralamasi : 
+
+    CanMatch >CanActivate> CanActivateChild > Resolve  CanDeactivate > 
+
+Functional Router Guard Neden Geldi?
+
+    neden interfaceten kacinildigi aciklanacak. Sadelestirilmis javascript formatinda islem yapmak istiyorlar. 
+
+DERS 28: ROUTE DATA PASSING : 
+
+    Route Data Passing, angular router araciligiyla sayfalar arasi veri tasinmasi sagalnir. 
+
+    router paramater ve query string ile ayni amaa hizmet eder ancak metodu farklidir.
+
+    Route Data Passing ile veri url uzerinde degil data paramatresi uzerinden aktarilmaktadir. Veri daha gizli bir yontemle tasinmaktadir. 
+
+    Route Taniminda yapilmasi gereken islem : 
+
+        {path: 'products', component: ProductListComponent, data: {title: 'Product List'}}
+        //burada data property'si ile title property'si tanimlanmistir.
+
+    Route Data Passing ile veri okuma :
+
+        this.route.data.subscribe(data => {
+            this.title = data.title;
+        });
+
+    
