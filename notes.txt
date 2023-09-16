@@ -908,6 +908,8 @@ Functional Router Guard Neden Geldi?
 
     neden interfaceten kacinildigi aciklanacak. Sadelestirilmis javascript formatinda islem yapmak istiyorlar. 
 
+================================================================================================================================
+
 DERS 28: ROUTE DATA PASSING : 
 
     Route Data Passing, angular router araciligiyla sayfalar arasi veri tasinmasi sagalnir. 
@@ -927,4 +929,133 @@ DERS 28: ROUTE DATA PASSING :
             this.title = data.title;
         });
 
+================================================================================================================================       
+
+DERS 29 : ROUTER EVENTLERI
+
+    Router eventleri nedir? 
+
+        -Angularda Router Eventler Angular Router'in farkli asamalardaki degisiklikleri yakalamak icin kullanilan olaylardir. 
+
+        -navigationStart
+        -RoutesRecognized
+        -GuardsCheckStart
+        -ChildActivationStart
+        -ActivationStart
+        -GuardsCheckEnd
+        -ResolveStart
+        -ActivationEnd
+        -ResolveEnd
+        -ChildActivationEnd
+        -NavigationEnd
+        -navigationCancel
+        -navigationError
+
+    (ilgili kod blogu Gencay Yildiz Angular 16 playlist - 29 ders - dk 6:48'de mevcuttur)
+
+================================================================================================================================
+
+DERS 30 : DERINLEMESINE MODULE YAPILANMASI - LAZY LOADING MODULES
+
+    -Yonetimi zorlasan mimari parcalayarak daha rahat yonetebilmek icin module yapilanmasi kullanilir.
+
+    -Javascript module ile Angular module farkli yapilardir. 
     
+    -Belirli bir isleme ait componentler, directiveler, service'ler vs barindirir bunlarin moduler olarak yonetilmesi saglanir
+
+    -@NgModel decarotoru ile gosterirlir componenet, service, directive, pipe gibi yapilar metadata olarak barindirlir. 
+
+    -modulde tanimlanmis yapilar birbirleri icerisinde ihtiyac dogrultusunda inject edilebilmektedir. 
+
+    other module > import > app module < declare/provide < pipe, component  vs./ Service
+
+    JavaScript Module vs Angular Module:
+
+        javascript Module : 
+
+            dosya bazli. Her dosya ozunde bir moduledur.
+
+        Angular Module :
+
+            -Module bagli yapi taslarini da barindiran adress defteri gibi gorev yapmaktadir.
+
+    
+    Angular Module Yapilanmasi :
+
+        -Declaration :
+            -Component
+            -Directive
+            -Pipe
+
+        -Imports : 
+            -Module
+
+        -Providers:
+            -Service (dep. injection icin)
+
+        -Exports:
+            Modulun elemanlarindan baska componentleri kullanmak istedigimizde export edilmesi gerekmektedir.
+
+            Bir component selector ile kullanilabilmesi icin kullanacak mo;dule'un import etmesi gerekir, gonderen module'un de export etmesi gerekmektedir.
+
+        -Schemas : 
+            -Custom Elementlerin kullanilmasi icin gerekli olan islemlerdir. Dinamik/Programatik olarak yaratilan componentlerin kullanilmasi icin var olan bir alandi. ancak bu amac icin kullanimina artik gerek yoktur. 
+        
+        -Id :
+            -Module'un id'si angular tarafindan otomatik olarak olusturulur. 
+        
+        -Bootstrap :
+            -Uygulamanin baslangic component'ini  belirler. 
+            -Eger anamodule'de isek boostrap kullanimi zorunludur. 
+
+    Angular Uygulamasinda Modulun Yeri: 
+
+        Bir angular uygulamasinda default iki module gelir; Root(BrowserModule), Routing(RouterModule).
+
+    Modul Olusturulmasi:
+
+        -ng g module custom (custom isimli bir modul olusturulur.)
+
+        -Uygulamaya dahil edilmesi icin anamodule import edilmelidir.(  imports: [BrowserModule, AppRoutingModule, CustomModule],)
+
+        -ng g c custom/custom (custom modulunun icinde custom isimli bir component olusturulur. NG otomatik olarak componenti custom module icine declere eder.)
+
+        -Olusturulan componentin anamodule icinde kullanilabilmesi icin custom module export edilmelidir.
+
+    !!!Lazy Loading!!!:
+
+        -Uygulamanin kullanicinin ihtiyaci olan kisimlari yuklenir. Uygulamanin tamaminin yuklemesi yerine gerekli olan modulerin oncelikli yuklanmesi islemidir. 
+
+        -Birbirleriyle yakin yapilarin benzer modullere tanimlanarak olasi maliyet ve performans kayiplarinin onune gecilmesi saglanir.
+
+        Lazy loading olmadan  yaptigimiz ornekte router yapisi ve compenetler asagidaki gibi olan ornekte sayfa yuklanirken network uzerinde 3mb'ik bir yukleme yapildigini gorduk.
+
+        ~Without Lazy Loading~
+
+            @NgModule({
+                declarations: [AppComponent, AddProductComponent, ProductDetailsComponent, ProductListComponent, AddCustomerComponent, CustomerDetailComponent, CustomerListComponent, HomeComponent],
+                imports: [BrowserModule, AppRoutingModule, CustomModule],
+                providers: [],
+                bootstrap: [AppComponent],
+                })
+            export class AppModule  {}
+            --------------------------------------------------------------------------
+            const routes: Routes = [
+            { path: '', component: HomeComponent },
+            { path: 'products', component: ProductListComponent },
+            { path: 'products/add', component: AddProductComponent },
+            { path: 'products/:id', component: ProductDetailsComponent },
+            { path: 'customers', component: CustomerListComponent },
+            { path: 'customers/add', component: AddCustomerComponent },
+            { path: 'customers/:id', component: CustomerDetailComponent },
+            ];
+
+        -Lazy loading yapabilmek icin product ve customer module eklendi.
+        -declarationlar kaldirildi.
+        -modullerde gerekli routlar tanimlandiktan sonra 
+
+        ~With Lazy Loading~
+
+
+
+
