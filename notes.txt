@@ -1056,6 +1056,40 @@ DERS 30 : DERINLEMESINE MODULE YAPILANMASI - LAZY LOADING MODULES
 
         ~With Lazy Loading~
 
+    Lazy Loading:
+
+        Yukleme suresini azaltir.
+        Performansi arttirir.
+        Client tarafinda kaynak kullanimi azaltacaktir.
+
+    forRoot ve forChild Farki:
+
+        forRoot : Uygulamanin baslangicinda kullanilir. 
+
+        forChild : Uygulamanin baslangicinda kullanilmaz. Alt modullerde tanimlanacak routelar icin kullanilir
 
 
+================================================================================================================================
 
+DERS 31: PRELOADING STRATEGY
+
+    NG Preloading Strategy Nedir?
+
+        -Lazy loading ile isaretlenmis modullerin yuklenmesi icin kullanilan bir stratejidir. Yani lazy loading sayesinde uygulama ilk yuklemede sadece gerekli modulleri yukler. Preloading ile de modullerin request atilmadan arka planda yuklenmesini saglar. 
+
+    Preloadin Nasil Kullanilir? 
+
+        import: [RouterModule.forRoot(routes, {preloadingStrategy: PreloadAllModules})]
+
+    Bazi module'ler yuksek olcekli olabilir. Bu modulle'ler preloading ile isaretlenerek arka planda yuklenmesi saglanabilir. Bu sayade kullanicinin ihtiyaci oldugu durumda hizli bir sekilde yuklenebilir.
+
+    Custom Preload Strategy Olusturma?
+
+        -PreloadingStrategy interface'i implement edilerek bir export class olusturulur. Burada preloading yapacagimiz componentler in pathlarine route data ile true false bir data verebilir. customda bu datalarin kontrolu yapilarak routingmodule uzerinde preloading strategyi custom strategimiz olarak secerek kullanir. 
+
+
+        !!!(Anlatilan yapiyi 16. ornek proje icinde bulabilirsiniz.)!!!
+
+================================================================================================================================
+
+    

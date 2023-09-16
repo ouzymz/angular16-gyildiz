@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { AddCustomerComponent } from './add-customer/add-customer.component';
 import { CustomerListComponent } from './customer-list/customer-list.component';
 import { CustomerDetailComponent } from './customer-detail/customer-detail.component';
-import { RouterModule } from '@angular/router';
+import { PreloadAllModules, RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [
