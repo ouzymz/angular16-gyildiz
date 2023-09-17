@@ -1202,4 +1202,17 @@ DERS 36: NgContainer Yapilanmasi
 
         -Bu calismayi da asagidaki gibi ngfor [ngForOf] ve [ngForTrackBy] directivelri ile birlikte insaa edebilirsiniz. 
 
+        -switchcase yapilarinda da tercih edilebilirler.
+
+ ================================================================================================================================
+
+ DERS 37: ngTemplateOutlet & ngTemplateOutletContext Directives
+
+    ngTemplateOutlet Nedir? Nasil Kullanilir? 
+
+    <ng-container [ngTemplateOutlet]="templateSample" [ngTemplateOutletContext]="{data:123}"></ng-container>
+
+    (Ilgili calisma 22-NgTemplateDirectives projesinde mevcuttur.)
+
+ ================================================================================================================================
 

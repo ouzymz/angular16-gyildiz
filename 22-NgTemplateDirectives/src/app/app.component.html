@@ -1,0 +1,35 @@
+<!-- let-data="data" tirnak icindeki isim ayni tutulmalidir. -->
+<ng-template #templateSample let-data="data" > <h1>Template Sample data: <br>{{data.araba}}</h1></ng-template>
+
+<!-- ngTemplateOutletContext kullanilacaksa ngTemplateOutlet de kapali parantez icinde kullanilmadir. aksi takdirde hata verir. [kapali orantezli kullanim yapilirsa ng conteiner icindeki deger ezilmez ]-->
+<ng-container [ngTemplateOutlet]="templateSample" [ngTemplateOutletContext]="{data:{bisiklet:123,araba:321}}"> Ezilemeyen icerik</ng-container>
+<br><hr><br>
+
+
+<!-- ikinci yontem bu yontem ile ilgili containerin icerigi ezilmistirr -->
+<ng-template #templateSamplev2 let-bisiklet="bisiklet" let-araba="araba" > <h1>Template Sample bisiklet: <br>{{bisiklet}} - araba: {{araba}}</h1></ng-template>
+
+<ng-container *ngTemplateOutlet="templateSamplev2; context:{bisiklet:123,araba:321}">Ezilen icerik</ng-container>
+
+<br><hr><br>
+
+<ng-template #templateSamplev3 let-bisiklet="bisiklet" let-araba > $implicit operatorlu version <h1>Template Sample bisiklet: <br>{{bisiklet}} - araba: {{araba}}</h1></ng-template>
+
+<ng-container *ngTemplateOutlet="templateSamplev3; context:{bisiklet:123,$implicit:'default-value-from-implicit'}"></ng-container>
+
+<br><hr><br>
+Implicit Manevra Ornegi
+<ng-container *ngTemplateOutlet="implicitManevra; context:{$implicit:persons} "></ng-container>
+<ng-template #implicitManevra let-person>
+  <ul>
+    <li *ngFor="let _person of persons">
+      {{_person.name}}
+    </li>
+  </ul>
+</ng-template>
+
+<br><hr><br>
+
+<ng-template #parentNgTemplate >Parent Template Icerigi</ng-template>
+
+<app-child [childContainer]="parentNgTemplate"></app-child>
