@@ -1146,3 +1146,23 @@ DERS 33: BoostrpApplication & Router Input
         Standalone ile birlikte anamodule'de import edilen modulelerin kullanilan elementleri single olaran standalone component importlarina eklenebilir.
 
         -Standalone componentin amaci AppModule'den bagimsiz olarak calismasini saglamaktir. Bu yuzden appmodule 
+
+    Router inputs
+
+        Goruldugu gibi Router Inpots ozelligi Route PARAMETERS, Query parameters, Route Data passing, resolve guard gibi yapilardan gelen veriyi otomatik olarak okumamizi saglayan yapidir. 
+
+        Component Input Binding ozelligi etkinlestirilerek kullanilir.
+
+        Haliyle bunun icin RouterMoude;de bindToComponentInput ozelligi etkinlestirilmeli, Eger ki standalone bir component kullanilacaksa withComponentInpotBinding konfigurasyonu cagirilmalidir.
+
+        (ilgili ornek calisma ve notlari 19. proje icinde mevcuttur.)
+
+================================================================================================================================
+
+DERS 34: NgContent YAPILANMASI
+
+    ng-content Nedir?
+
+        -bildiginiz uzere @input ve @output decoratorleri ile componenetler arasinda veri akisi saglanir. ng-content ile parenttan child'a html aktarmamizi mumkun kilan yapidir.
+
+        -Birden fazla kullanilan ng-content kulaniminda select ile header, body, footer gibi alanlar belirlenebilir. 
