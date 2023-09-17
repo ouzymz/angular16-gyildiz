@@ -1,0 +1,16 @@
+<!-- kirli calisma ornegi -->
+<!-- Burada ngif ile kontrol edilen yapilar icinde false donenler icin li elementi olusturulmadi ancak ngfor ve ng if ayni dom element uzerinde kullanilamadigi icin bos span elementleri olusturuldu bu gibi durumlarin onune gecilebilmesi icin ngcontainer kullanilabilir. -->
+<!-- <h1>App Component</h1>
+<ul>
+  <span *ngFor="let product of products">
+    <li *ngIf="product.avaible">{{product.productName}}</li>
+  </span>
+</ul> -->
+
+<h1>App Component</h1>
+<ul>
+  <ng-container *ngFor="let product of products">
+    <li *ngIf="product.avaible">{{product.productName}}</li>
+  </ng-container>
+</ul>
+
