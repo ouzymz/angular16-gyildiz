@@ -1,0 +1,21 @@
+<h1 #h1Element appExampleDirective>App Component</h1>
+<br>
+<app-child1 #childElement></app-child1>
+<app-child2 #childElement></app-child2>
+<app-child3 #childElement></app-child3>
+<div #divElements>div elementlar viewchildren ile yakalansin diye olusturuldu</div>
+<div #divElements>div elementlar viewchildren ile yakalansin diye olusturuldu</div>
+<div #divElements>div elementlar viewchildren ile yakalansin diye olusturuldu</div>
+
+
+
+
+<br><br><br>
+<p #parag >Lorem ipsum dolor sit, amet consectetur adipisicing elit. Harum natus, laudantium illum nostrum architecto, neque hic perferendis odit omnis minima itaque voluptate. Cumque adipisci asperiores magnam cum non accusantium voluptatibus?</p>
+
+<p #parag *ngIf="visible"> hic perferendis odit omnis minima itaque voluptate. Cumque adipisci asperiores magnam cum non accusantium voluptatibus?Lorem ipsum dolor sit, amet consectetur adipisicing elit. Harum natus, laudantium illum nostrum architecto, neque</p>
+
+<p #parag *ngIf="!visible">Harum natus, laudantium illum nostrum architecto, neque hic perferendis odit omnis minima itaque voluptate. Cumque adipisci asperiores magnam cum non accusantium voluptatibusLorem ipsum dolor sit, amet consectetur adipisicing elit. ?</p>
+
+
+<button (click)="showHide()">Show/Hide</button>

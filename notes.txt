@@ -1216,3 +1216,32 @@ DERS 36: NgContainer Yapilanmasi
 
  ================================================================================================================================
 
+DERS 38: ViewChild nedir Nasil Kullanilir?
+
+    ViewChild Nedir? 
+
+        -ViewChild, DOM'daki nesneleri component class'inda temsil etmeyi saglayan vir devoratordur. 
+
+        <div #myDiv> </div> //html'de tanimlanir.
+        @ViewChild('myDiv') myDiv: ElementRef; //component class'inda tanimlanir.
+
+        -static parametresi sayfanin initialize edildigindan beri var olup olmadigini gosterir. static parametresinde sayfa initialize edildiginde nesne varsa true yoksa false degeri alir. yani false dersek ngafterviewinit icinde bu bu nesneyi cagirmak mantikli olur.  
+
+    ViewChild Multiple Instance?
+
+        -Eger birden fazla elementi refere edilem dom element varsa ilk elementi yakalar ve islem yapar.
+
+    ViewChild Read Option 
+
+        (ilgili calisma ve notler proje 23-ViewChild'ta yapilmistir.)
+
+    ViewChildren nedir, nasil Kullanilir?
+
+        -birden fazla elementi yakalamak icin kullanilir.
+        (ilgili calisma ve notlar proje 23-ViewChildren'da yapilmistir.)
+
+    QuertList - Changes Property'si
+
+        -ViewChildren dekoratoru neticesinde QueryList turunden elde edilen ogelerin sayfaya eklenip kaldirildiginna dair bilgi edinebilme icin changes property'sine subscribe olarak sureci takip edebiliriz. 
+
+        
