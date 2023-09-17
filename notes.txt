@@ -1,4 +1,4 @@
-
+1
 DERS 1: Angular nedir?? 
 
 
@@ -1134,3 +1134,15 @@ DERS 32: STANDALONE COMPONENTS & DIRECTIVES & PIPES
 
         builtin olarak gelin directiveler, pipelar, servicelerfalan common module icine alinmistir. bunun yerine kullanilacak elementlari kullanilacak component import ederek kullanmamizi saglar. CommonModule import etme ihtiyaci ortadan kaldirilmistir. 
 
+================================================================================================================================
+
+
+DERS 33: BoostrpApplication & Router Input
+
+    BoostrpApplication Nedir?
+
+        Bir angular uygulamasini, Standalone Componenet kullanarak veherhangi bir uygulamaya bagimlilik olmaksizin onyuklayecek bir fonksiyondur.
+
+        Standalone ile birlikte anamodule'de import edilen modulelerin kullanilan elementleri single olaran standalone component importlarina eklenebilir.
+
+        -Standalone componentin amaci AppModule'den bagimsiz olarak calismasini saglamaktir. Bu yuzden appmodule 
