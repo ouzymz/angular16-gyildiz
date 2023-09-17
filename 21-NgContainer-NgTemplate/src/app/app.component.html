@@ -1,0 +1,29 @@
+<!-- kirli calisma ornegi -->
+<!-- Burada ngif ile kontrol edilen yapilar icinde false donenler icin li elementi olusturulmadi ancak ngfor ve ng if ayni dom element uzerinde kullanilamadigi icin bos span elementleri olusturuldu bu gibi durumlarin onune gecilebilmesi icin ngcontainer kullanilabilir. -->
+<!-- <h1>App Component</h1>
+<ul>
+  <span *ngFor="let product of products">
+    <li *ngIf="product.avaible">{{product.productName}}</li>
+  </span>
+</ul> -->
+
+<h1>App Component</h1>
+<ul>
+  <ng-container *ngFor="let product of products">
+    
+    <li *ngIf="product.avaible">{{product.productName}}</li>
+  </ng-container>
+</ul>
+
+<!-- ng container dom elementsiz bir sekilde html'de gosterilirken ng template elementi hicbir sekilde HTML'de gosterilmemistir. -->
+<ng-container>NG container icerigi!!</ng-container>
+<ng-template>NG template icerigi!!</ng-template>
+
+<br>  
+<ng-container *ngTemplateOutlet="ngTemplateIcerik">Icerik Ng Template yuzunden ezildi</ng-container>
+
+<ng-template #ngTemplateIcerik>NG template icerigi ngTemplateOutlet ile ng container uzerinden gosterildi!!</ng-template>
+
+<br>
+
+<ng-template #ngTemplateIcerikViewChild>NG template icerigi viewchild ile templateref ve viewcontainerref kullanilarak gosterildi gosterildi!!</ng-template>

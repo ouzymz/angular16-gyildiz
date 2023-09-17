@@ -1166,3 +1166,40 @@ DERS 34: NgContent YAPILANMASI
         -bildiginiz uzere @input ve @output decoratorleri ile componenetler arasinda veri akisi saglanir. ng-content ile parenttan child'a html aktarmamizi mumkun kilan yapidir.
 
         -Birden fazla kullanilan ng-content kulaniminda select ile header, body, footer gibi alanlar belirlenebilir. 
+
+        (ilgili calisma ve notlar proje 20 icinde mevcuttur.)
+
+================================================================================================================================
+
+DERS 35: NgContainer YAPILANMASI
+
+    ng-container Nedir?
+        -gereksiz html dom elementi olusturmadan angular yapilarini kullanilmasina olanak saglayan yapidir.
+        (ilgili calisma ve notlar proje 20 icinde mevcuttur.)
+
+
+ ================================================================================================================================
+
+DERS 36: NgContainer Yapilanmasi
+
+    ng-template Nedir?
+
+        -ng-template ng-container gibidir ancak temel farki render edildigi taktirde dahi ayri apartlar araciligiyla gosterilmedigi surece icerisindeki HTML elementlerin DOM uzerine islenmemesidir. 
+
+    NG Template gosterme:
+
+        #templateRef ile template referans edilir. ve *ngTemplateOutlet ile referansindan cagirilir.
+
+        (ilgili calisma ve notlar proje 21 icinde orneklendirilmis ve aciklanmistir.)
+
+    Hangi Durumlarda Kullanilir?
+
+        -if-else case durumlarina gore sablon gosterilmlarinda ng-template kullanilmasi mantiklidir.
+
+        -ifthen, ifelse, if caseleri olarak kullanim alanlari genisletilebilir. 
+
+        -listeleme sureclerinde de repeat edilecek yapi ng-template ile olusturulabilir. 
+
+        -Bu calismayi da asagidaki gibi ngfor [ngForOf] ve [ngForTrackBy] directivelri ile birlikte insaa edebilirsiniz. 
+
+
