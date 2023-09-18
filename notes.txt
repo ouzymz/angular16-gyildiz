@@ -1244,4 +1244,18 @@ DERS 38: ViewChild nedir Nasil Kullanilir?
 
         -ViewChildren dekoratoru neticesinde QueryList turunden elde edilen ogelerin sayfaya eklenip kaldirildiginna dair bilgi edinebilme icin changes property'sine subscribe olarak sureci takip edebiliriz. 
 
+
+ ================================================================================================================================
+
+DERS 39: RENDERER2 
+
+    Renderer2 Sinifi Nedir?
+    
+        -HTML elementlerini manipule etmek icin kullanilir. 
+        -Web uygularimda platformdam bagimsiz olarak DOM manipulasyonu yapmamizi saglar.
+        -DOM manipulasyonlari ozellestirilmis bir api servici uzerinden gerceklestirir.
+        
+    Nasil Kullanilir?
+
+        -Ilgili componente implemente edilerek kullanilabilir. 
         
