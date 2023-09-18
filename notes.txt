@@ -1258,4 +1258,14 @@ DERS 39: RENDERER2
     Nasil Kullanilir?
 
         -Ilgili componente implemente edilerek kullanilabilir. 
-        
+
+ ================================================================================================================================
+
+
+DERS 39: CONTENTCHILD VE CONTENTCHILDREN
+
+    -Component icerisindeki hehangi bir DOM nesnesini component classinde referans alabilmek icin ViewChild veya ViewChildren kullanilir. ContentChild ve ContentChildren decorator'lerinde ise ng-content icerisindeki herhangi bir nesneti child component class'inda referans alabilmek icin kullanilir.
+
+    -!!Normalde bu nesneye parent component'te ViewChild ile erisebilecegimizi sanabiliriz. Lakin ng-content icerisindeki elementleri ViewChild ile erisemeyiz. Bunun icin ContentChild ve ContentChildren decorator'lerini kullanmamiz gerekmektedir. Ve childcomponent uzerinde bu elementleri yakalayabiliriz. 
+
+    
