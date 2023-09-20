@@ -1350,3 +1350,26 @@ DERS 39: CONTENTCHILD VE CONTENTCHILDREN
 
             -environment.ts dosyasi uzerinden okunur.
     
+
+    DERS 43: HttpClient KUTUPHANESI 
+
+        -Angular uygulamalarinda HTTP isteklerini yonetmek icin kullanilir.
+        -@angular/common/http modulunden import edilir.
+
+        HttpClient Kullanimi : 
+
+            -Ana module uzerinen httpclient module import edilir. Standalone yapilar icin provide icinde import edilir.
+            
+        HttpClient kutuphanesini kullanirken Yardimci HttpParams:
+
+        (ilgili notlar proje 28 icinde mevcuttur.)
+
+
+        HTTP headers: 
+
+            -Http isteklerinde header bilgileri gonderilebilir.
+            
+            (ilgili calisme projede mevcut.)
+
+            (Gencay Yildiz mini e-ticaret uygulamasini izle detayli anlatim ve jenerik bir kullanim icin.)
+
