@@ -1373,3 +1373,26 @@ DERS 39: CONTENTCHILD VE CONTENTCHILDREN
 
             (Gencay Yildiz mini e-ticaret uygulamasini izle detayli anlatim ve jenerik bir kullanim icin.)
 
+
+
+
+DERS 44: Http Interceptor 
+
+    Http Inceptor Nedir?
+
+        -Http isteklerini yakalamak ve manipule etmek icin kullanilir.
+
+        Angular -> request -> incetor -> request -> API
+        
+        API -> response -> interceptor -> response -> Angular
+
+    Http Inceptor'in Kullanildigi senaryolar: 
+
+        -Kimlik dogrulama islemlerinde
+        -Hata isleme
+        -Caching 
+        -Loglama 
+
+    Http Interceptor Olusturma
+
+        -CLI ile olusturulabilir. ng g interceptor interceptors/Authentication --skipTests=true
