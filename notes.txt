@@ -1321,3 +1321,32 @@ DERS 39: CONTENTCHILD VE CONTENTCHILDREN
         1- npm i bootstrap
         2- angular.json dosyasinda styles property'sine "node_modules/bootstrap/dist/css/bootstrap.min.css" eklenir.
         3- angular.json dosyasinda scripts property'sine "node_modules/bootstrap/dist/js/bootstrap.min.js" eklenir.
+        
+
+    ================================================================================================================================
+
+    DERS 42: APP_INITIALIZER & Environment Variables Configurations
+
+        APP_INITIALIZER Nedir?
+
+            -Uygulamanin oncul durumlarda yani uygulama ilk baslarken yapilmasi gereken islemler icin kullanilir.
+            -APP_INITIALIZER ornegin API veri cikiyor olsun bu surec tamamlanana kadar uygulama baslangici bekletilir. 
+        
+        Angular Runtime Configuration:
+
+            -uygulama kaldirilirken baslangicta yuklenmesi gereken runtime yapilandirmalarina ihtiyac duyulabilir.
+            -static yapilandirmalari static dosyalarda tutmaliyiz.
+
+            -src/app/assets/config dizininde yapilandirma dosyasi tutulabilir. 
+            (ilgili calisma proje 27'de yapilmistir.)
+
+        Angular Environment Variables:
+
+            -Uygulamanin ortamina gore degiskenlerin tanimlanmasi icin kullanilir.
+
+            -ng g environments 
+
+        Environment Nasil Okunur?
+
+            -environment.ts dosyasi uzerinden okunur.
+    
